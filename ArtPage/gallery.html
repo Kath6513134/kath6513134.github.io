@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <link rel="icon" href="Icon.png">
+    <title>Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        body {
+            background-color: #FFF9F4;
+            overflow-x: hidden;
+        }
+        #gridContainer {
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            gap: 10px;
+            background-color: #FFF9F4;
+            padding: 10px;
+        }
+        #item1 {
+            grid-area: title;
+        }
+        #item1 * {
+            width: 100%;
+        }
+        #item2 {
+            grid-area: img1;
+        }
+        #item3 {
+            grid-area: img2;
+        }
+        #item4 {
+            grid-area: img3;
+        }
+        #item5 {
+            grid-area: img4;
+        }
+        #item6 {
+            grid-area: img5;
+        }
+        #item7 {
+            grid-area: img6;
+        }
+        #item8 {
+            grid-area: img7;
+        }
+        @media only screen and (max-width: 600px) {
+            #item1 {
+                grid-area: 1 / span 12;
+                max-height: 15%;
+            }
+            #gridContainer>*:not(#item1,#item9,#item10,#item11,#item12) {
+                display: none;
+            }
+            #item9 {
+                grid-area: 3 / 1 / span 1 / span 1;
+            }
+            #item10 {
+                grid-area: 2 / 2 / span 3 / span 10;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                max-height: 100%;
+            }
+            #item11 {
+                grid-area: 3 / 12 / span 1 / span 1;
+            }
+            #item9,#item11 {
+                z-index: 2;
+            }
+            button {
+                align-items: center;
+                vertical-align: middle;
+                border-radius: 50%;
+                z-index: 3;
+                width: 30px;
+                height: 30px;
+                background-color: #7594E9;
+                color: #FFF9F4;
+                border: none;
+                font-size: 20px;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            }
+            button:hover {
+                background-color: #000000;
+                color: #ffC174;
+            }
+            #slideshowimg {
+                position: absolute;
+                width: 70%;
+                left: 15%;
+                object-fit: contain;
+                max-height: 450px;
+            }
+            #item12 {
+                grid-area: 5 / 1 / span 1 / span 12;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                height: 25px;
+                margin: 10px;
+                padding: 10px;
+            }
+            .dot {
+                z-index: 5;
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 3px;
+                background-color: #aaaaaa;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+            #hide {
+                opacity: 0;
+                width: 100%;
+                max-height: 450px;
+            }
+            #nav {
+                rotate: 90deg;
+                position: fixed;
+                bottom: 10px;
+                height: 200px;
+                width: 200px;
+                margin: -105px 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                justify-content: center;
+            }
+            #nav a {
+                width: 200px;
+            }
+            #nav a:hover {
+                margin-right: 25px;
+            }
+            #span1 {
+                background-color: #454545;
+            }
+            body {
+                height: 100vh;
+            }
+        }
+        @media only screen and (min-width: 600px) {
+            #gridContainer {
+                padding-left: 50px;
+                padding-right: 100px;
+            }
+            #item1 {grid-area: 1 / 1 / span 1 / span 7;}
+            #item2 {grid-area: 2 / 1 / span 2 / span 3;}
+            #item3 {grid-area: 2 / 4 / span 2 / span 4;}
+            #item4 {grid-area: 2 / 8 / span 1 / span 4;}
+            #item5 {grid-area: 4 / 1 / span 1 / span 3;}
+            #item6 {grid-area: 4 / 4 / span 1 / span 2;}
+            #item7 {grid-area: 4 / 6 / span 1 / span 2;}
+            #item8 {grid-area: 3 / 8 / span 2 / span 4;}
+            #item9,#item10,#item11,#item12 {
+                display: none;
+            }
+            #nav {
+                position: fixed;
+                top: 0;
+                right: -100px;
+                width: 200px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                justify-content: center;
+            }
+            #nav a {
+                width: 200px;
+            }
+            #nav a:hover {
+                margin-right: 25px;
+            }
+        }
+    </style>
+    <script>
+        let ind=1
+        function currentSlide(n) {
+            document.getElementById("slideshowimg").src = "Gallery/IMG"+n+".png"
+            for (let i=1; i<=7; i++) {
+                if (i == n) {
+                    document.getElementById('span'+n).style.backgroundColor = "#454545"
+                } else {
+                    document.getElementById('span'+i).style.backgroundColor = "#aaaaaa"
+                }
+                ind = n
+            }
+        }
+        function hover(n) {
+            document.getElementById('span'+n).style.backgroundColor='#727272'
+        }
+        function release(n) {
+            if (n!=ind) {
+                document.getElementById('span'+n).style.backgroundColor='#aaaaaa'
+            }
+        }
+        function back() {
+            ind -= 1
+            if (ind<1) {
+                ind = 7
+            }
+            for (let i=1; i<=7; i++) {
+                if (i == ind) {
+                    document.getElementById('span'+i).style.backgroundColor = "#454545"
+                } else {
+                    document.getElementById('span'+i).style.backgroundColor = "#aaaaaa"
+                }
+            }
+            document.getElementById("slideshowimg").src = "Gallery/IMG"+ind+".png"
+        }
+        function next() {
+            ind += 1
+            if (ind>7) {
+                ind = 1
+            }
+            for (let i=1; i<=7; i++) {
+                if (i == ind) {
+                    document.getElementById('span'+i).style.backgroundColor = "#454545"
+                } else {
+                    document.getElementById('span'+i).style.backgroundColor = "#aaaaaa"
+                }
+            }
+            document.getElementById("slideshowimg").src = "Gallery/IMG"+ind+".png"
+        }
+    </script>
+</head>
+<body>
+    <div id="gridContainer">
+        <div id="item1">
+            <img draggable="false" src="Gallery/Title.png" id="heading">
+        </div>
+        <div id="item2">
+            <img draggable="false" src="Gallery/IMG1.png" alt="IMG1" class="image" id="img1">
+        </div>
+        <div id="item3">
+            <img draggable="false" src="Gallery/IMG2.png" alt="IMG2" class="image" id="img2">
+        </div>
+        <div id="item4">
+            <img draggable="false" src="Gallery/IMG3.png" alt="IMG3" class="image" id="img3">
+        </div>
+        <div id="item5">
+            <img draggable="false" src="Gallery/IMG4.png" alt="IMG4" class="image" id="img4">
+        </div>
+        <div id="item6">
+            <img draggable="false" src="Gallery/IMG5.png" alt="IMG5" class="image" id="img5">
+        </div>
+        <div id="item7">
+            <img draggable="false" src="Gallery/IMG6.png" alt="IMG6" class="image" id="img6">
+        </div>
+        <div id="item8">
+            <img draggable="false" src="Gallery/IMG7.png" alt="IMG7" class="image" id="img7">
+        </div>
+        <div id="item9">
+            <button id="back" onclick="back()"><</button>
+        </div>
+        <div id="item10">
+            <img src="Gallery/IMG6.png" id="hide">
+            <img id="slideshowimg" src="Gallery/IMG1.png">
+        </div>
+        <div id="item11">
+            <button id="next" onclick="next()">></button>
+        </div>
+        <div id="item12">
+            <span class="dot" onclick="currentSlide(1)" onmouseover="hover(1)" onmouseout="release(1)" id="span1"></span>
+            <span class="dot" onclick="currentSlide(2)" onmouseover="hover(2)" onmouseout="release(2)" id="span2"></span>
+            <span class="dot" onclick="currentSlide(3)" onmouseover="hover(3)" onmouseout="release(3)" id="span3"></span>
+            <span class="dot" onclick="currentSlide(4)" onmouseover="hover(4)" onmouseout="release(4)" id="span4"></span>
+            <span class="dot" onclick="currentSlide(5)" onmouseover="hover(5)" onmouseout="release(5)" id="span5"></span>
+            <span class="dot" onclick="currentSlide(6)" onmouseover="hover(6)" onmouseout="release(6)" id="span6"></span>
+            <span class="dot" onclick="currentSlide(7)" onmouseover="hover(7)" onmouseout="release(7)" id="span7"></span>
+        </div>
+    </div>
+    <div id="nav">
+        <a href="index.html" id="backa" ><img draggable="false" src="Gallery/back.png" id="back" class="icon"></a>
+        <a href="about.html" id="abouta" ><img draggable="false" src="Gallery/about.png" id="about" class="icon" alt="About Me Link"></a>
+        <a href="commission.html" id="comma" ><img draggable="false" src="Gallery/coms.png" id="commission" class="icon"></a>
+        <a href="faq.html" id="faqa" ><img draggable="false" src="Gallery/faq.png" id="faq" class="icon"></a>        
+    </div>
+</body>
+</html>
