@@ -1,25 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
-    <title>title</title>
+    <link rel="icon" href="Icon.png">
+    <title>Forms</title>
     <style>
+        @font-face {
+            font-family: 'Barber Chop';
+            src: url(Fonts/barber_chop/BarberChop.otf);
+        }
+        @font-face {
+            font-family: 'Comics Tricks';
+            src: url(Fonts/comics_tricks/Comics%20Tricks.ttf);
+        }
+        @font-face {
+            font-family: 'Pink Chicken';
+            src: url(Fonts/pink_chicken/PinkChicken-Regular.ttf);
+        }
         body {
+            min-height: 100vh;
             background-image: url(Forms/hand.png), url(Forms/background.png);
             background-size: 50vw auto, 100vw auto;
-            background-position: right 30vw, top center;
+            background-position: bottom right, top center;
             background-repeat: no-repeat;
         }
         #content {
             position: absolute;
-            height: 60vw;
             width: 80vw;
             left: 10vw;
             top: 8vw;
         }
         h1 {
+            margin: 15px 0 0;
             width: 100%;
             text-align: center;
+            font-family: 'Barber Chop', sans-serif;
+            font-weight: normal;
+            font-size: 50px;
+            text-shadow: -1px -3px 0px #7594e9, 1px 3px #f6C979;
+            color: #000000;
+        }
+        * {
+            font-family: 'Pink Chicken', sans-serif;
+            color: #5A7DE0;
+        }
+        label:first-child {
+            font-family: 'Comics Tricks', sans-serif;
+        }
+        #content div {
+            margin-bottom: 15px;
+        }
+        label {
+            font-size: 25px;
+            line-height: 30px;
+        }
+        #item1,#item2,#item5 {
+            display: flex;
+            flex-direction: column;
+            input {
+                height: 25px;
+                border: 2px solid black;
+                background-color: #7594e9;
+                width: 80%;
+                color:#000000;
+                font-size: 20px;
+            }
+            input:focus {
+                background-color: #5A7DE0;
+            }
+            textarea {
+                height: 25px;
+                border: 2px solid black;
+                background-color: #7594e9;
+                width: 60%;
+                min-height: 50px;
+                max-width: 80%;
+                color:#000000;
+                font-size: 20px;
+            }
+            textarea:focus {
+                background-color: #5A7DE0;
+            }
+        }
+        #item3,#item4 {
+            label[for] {
+                font-size: 20px;
+                line-height: 15px;
+            }
+            input:checked {
+                accent-color: #000000;
+            }
+            input:checked+label{
+                color: #000000;
+            }
+        }
+        button {
+            margin-top: 15px;
+            background-color: #7594e9;
+            color: #000000;
+            border: 2px solid black;
+            padding: 0;
+            font-size: 25px;
+            line-height: 31px;
+            height: 35px;
+            width: 100px;
+        }
+        button:hover {
+            background-color: #000000;
+            color: #f6C979;
+        }
+        #gridContainer {
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        @media only screen and (max-width: 600px) {
+            body {
+                background-image: none;
+            }
+            #item1 {grid-area: 1 / 1 / span 1 / span 12;}
+            #item2 {grid-area: 2 / 1 / span 1 / span 12;}
+            #item3 {grid-area: 3 / 1 / span 1 / span 12;}
+            #item4 {grid-area: 4 / 1 / span 1 / span 12;}
+            #item5 {grid-area: 5 / 1 / span 1 / span 12;}
+            #item6 {grid-area: 6 / 1 / span 1 / span 12;}
+            
+            input:not([type=radio]),textarea {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+        @media only screen and (min-width: 600px) {
+            #item1 {grid-area: 1 / 1 / span 1 / span 8;}
+            #item2 {grid-area: 2 / 1 / span 1 / span 8;}
+            #item3 {grid-area: 3 / 1 / span 1 / span 4;}
+            #item4 {grid-area: 3 / 5 / span 1 / span 4;}
+            #item5 {grid-area: 4 / 1 / span 1 / span 8;}
+            #item6 {grid-area: 5 / 1 / span 1 / span 8;}
         }
     </style>
 </head>
@@ -28,8 +147,45 @@
         <h1>Commission Forms</h1>
         <!--Name, Email, Type of Art, Description-->
         <form>
-            
+            <div id="gridContainer">
+                <div id="item1">
+                    <label for="name">NAME:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div id="item2">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div id="item3">
+                    <label>STYLE</label><br>
+                    <input type="radio" name="style" id="Sketch" value="Sketch">
+                    <label for="Sketch">Sketch</label><br>
+                    <input type="radio" name="style" id="Flat" value="Flat">
+                    <label for="Flat">Flat Color</label><br>
+                    <input type="radio" name="style" id="Fully" value="Fully">
+                    <label for="Fully">Fully Rendered</label>
+                </div>
+                <div id="item4">
+                    <label>COMPOSITION</label><br>
+                    <input type="radio" name="composition" id="Head" value="Head">
+                    <label for="Head">Head Shot</label><br>
+                    <input type="radio" name="composition" id="Half" value="Half">
+                    <label for="Half">Half Body</label><br>
+                    <input type="radio" name="composition" id="Full" value="Full">
+                    <label for="Full">Full Body</label>
+                </div>
+                <div id="item5">
+                    <label for="Desc">DESCRIPTION</label>
+                    <textarea id="Desc">Insert description here...</textarea>
+                </div>
+                <div id="item6">
+                    <button id="reset" onclick="reset()">Reset</button>
+                    <button id="submit" onclick="output()">Submit</button>
+                </div>
+            </div>
         </form>
+        <div id="summary">
+        </div>
     </div>
 </body>
 </html>
