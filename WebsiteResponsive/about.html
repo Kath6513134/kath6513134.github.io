@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <link rel="icon" href="Icon.png">
+    <title>About Me</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #FFF9F4;
+            overflow-x: hidden;
+        }
+        #gridContainer {
+            display: grid;
+            grid-template-columns: repeat(12,minmax(0,1fr));
+            gap: 10px;
+            background-color: #FFF9F4;
+            padding: 10px;
+        }
+        #navbar {
+            width: 100%;
+            height: 10vh;
+            background-color: #7594E9;
+        }
+        #item4 {
+            z-index: 2;
+        }
+        * {
+            width: 100%;
+        }
+        @media only screen and (max-width: 600px) {
+            #item1 {grid-area: 2 / 8 / span 1 / span 5;}
+            #item2 {grid-area: 1 / span 12;}
+            #item3 {grid-area: 3 / span 11;}
+            #item4 {grid-area: 2 / span 7;}
+            #item5 {grid-area: 4 / span 12;}
+        }
+        @media only screen and (min-width: 600px) {
+            #item1 {grid-area: 1 / 8 / span 3 / span 5;}
+            #item2 {grid-area: 1 / 1 / span 1 / span 7;}
+            #item3 {grid-area: 2 / 1 / span 1 / span 4;}
+            #item4 {grid-area: 2 / 5 / span 2 / span 3;}
+            #item5 {grid-area: 3 / 1 / span 1 / span 5;}
+            #item4 img {
+                height: auto;
+                width: 95%;
+            }
+            #star {
+                grid-area: 2 / 8 / span 1 / span 1;
+            }
+            #star img {
+                height: auto;
+            }
+            #minichar {grid-area: 3 / 8 / span 1 / span 2;}
+            #tie {grid-area: 2 / 4 / span 1 / span 2;}
+            #tie img {
+                width: 50%;
+                height: auto;
+                margin-top: -5%;
+            }
+            #strawberry {
+                grid-area: 3 / 5 / span 1 / span 1;
+                z-index: 4;
+            }
+            #strawberry img {
+                width: 40%;
+                height: auto;
+                margin-top: -15%;
+            }
+        }
+        img {
+            height: 100%;
+            object-fit: contain;
+        }
+        #navbar>a {
+            width: 11vh;
+            height: 100%;
+            float: left;
+        }
+        #flexContainer {
+            height: 100%;
+            display: flex;
+            float: right;
+            flex-direction: row;
+            width: 40vh;
+        }
+    </style>
+    <script>
+        function hov(id) {
+            console.log(id)
+            document.getElementById(id).src = "About/"+id+"2.png"
+        }
+
+        function rele(id) {
+            document.getElementById(id).src = "About/"+id+".png"
+        }
+    </script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="index.html" onmouseover="hov('Back')" onmouseleave="rele('Back')"><img draggable="false" src="About/Back.png" class="button" id="Back"></a>
+        <div id="flexContainer">
+            <a href="commission.html" onmouseover="hov('Commission')" onmouseleave="rele('Commission')"><img draggable="false" src="About/Commission.png" class="button" id="Commission"></a>
+            <a href="gallery.html" onmouseover="hov('Gallery')" onmouseleave="rele('Gallery')"><img draggable="false" src="About/Gallery.png" class="button" id="Gallery"></a>
+            <a href="faq.html" onmouseover="hov('FAQ')" onmouseleave="rele('FAQ')"><img draggable="false" src="About/FAQ.png" class="button" id="FAQ"></a>
+        </div>
+    </div>
+    <div id="gridContainer">
+        <div id="item1">
+            <img draggable="false" src="About/Character.gif" id="char">
+        </div>
+        <div id="item2">
+            <img draggable="false" src="About/Heading.png" id="heading">
+        </div>
+        <div id="item3">
+            <img draggable="false" src="About/likdis.png" id="likdis">
+        </div>
+        <div id="item4">
+            <img draggable="false" src="About/Fandom.png" id="fandom">
+        </div>
+        <div id="item5">
+            <img draggable="false" src="About/Inventory.png" id="invent">
+        </div>
+        <div id="tie">
+            <img draggable="false" src="About/Tie.png">
+        </div>
+        <div id="star">
+            <img draggable="false" src="About/Star.png">
+        </div>
+        <div id="minichar">
+            <img draggable="false" src="About/Me.png">
+        </div>
+        <div id="strawberry">
+            <img draggable="false" src="About/Strawberry.png">
+        </div>
+    </div>
+</body>
+</html>

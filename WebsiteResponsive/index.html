@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <link rel="icon" href="Icon.png">
+    <title>Home</title>
+    <style>
+        @font-face {
+            font-family: Bigfat;
+            src: url(Fonts/bigfat/Bigfat%20Script.ttf);
+        }
+        @font-face {
+            font-family: BigfatX;
+            src: url(Fonts/bigfat/Bigfat%20Script%20Xtrude.ttf);
+        }
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #FFF9F4;
+            overflow-x: hidden;
+        }
+        #gridContainer {
+            display: grid;
+            grid-template-columns: repeat(12,minmax(0,1fr));
+            gap: 10px;
+            background-color: #FFF9F4;
+            padding: 10px;
+            max-height: 75vh;
+        }
+        #item1 {
+            grid-area: heading;
+            text-align: center;
+            height: fit-content;
+            min-height: 60px;
+        }
+        #item1 * {
+            font-size: 35px;
+            width: 100%;
+        }
+        #head1 {
+            position: absolute;
+            font-family: "Bigfat", cursive;
+            color: #FFBC5E;
+            text-shadow:
+            -2px 2px 0px black,
+            2px 2px 0px black,
+            2px -2px 0px black,
+            -2px -2px 0px black,
+            2px 0px 0px black,
+            -2px 0px 0px black;
+            z-index: 2;
+        }
+        #headback {
+            position: absolute;
+            text-align: center;
+            font-family: "BigfatX", cursive;
+            color: #000000;
+        }
+        .banner {
+            min-height: 10vh;
+            width: 100vw;
+            object-fit: cover;
+        }
+        #char {
+            width: 100%;
+        }
+        .icon {
+            width: 100%;
+        }
+        .icon:hover {
+            scale: 1.1;
+        }
+        @media only screen and (max-width: 600px) {
+            #item1 {grid-area: 1 / span 12;}
+            #item2 {grid-area: 2 / span 12;}
+            #item3 {grid-area: 3 / span 6;}
+            #item4 {grid-area: 3 / span 6;}
+            #item5 {grid-area: 4 / span 6;}
+            #item6 {grid-area: 4 / span 6;}
+
+            #bannerbot {display: none;}
+        }
+        @media only screen and (min-width: 600px) {
+            #item1 {grid-area: 1 / 7 / span 1 / span 6;}
+            #item2 {grid-area: 1 / 1 / span 3 / span 6;}
+            #item3 {grid-area: 2 / 7 / span 1 / span 3;}
+            #item4 {grid-area: 2 / 10 / span 1 / span 3;}
+            #item5 {grid-area: 3 / 7 / span 1 / span 3;}
+            #item6 {grid-area: 3 / 10 / span 1 / span 3;}
+            
+            #bannerbot {
+                position: absolute;
+                bottom: 0;
+            }
+            #item1 {
+                min-height: 76px;
+            }
+            #item1 * {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 900px) {
+            #item1 * {
+                font-size: 50px;
+            }
+        }
+        @media only screen and (min-width: 800px) {
+            .banner {
+                margin: 0;
+            }
+            .icon {
+                max-height: 30vh;
+                object-fit: contain;
+            }
+            #char {
+                max-height: 65vh;
+                object-fit: contain;
+            }
+            #gridContainer {
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+        }
+    </style>
+    <script>
+        function hoverchar() {
+            document.getElementById("char").src = "Index/Character2.png"
+        }
+        function releasechar() {
+            document.getElementById("char").src = "Index/Character.png"
+        }
+    </script>
+</head>
+<body>
+    <div id="bannertop">
+        <img class="banner" src="Index/Banner Top.png">
+    </div>
+    <div id="gridContainer">
+        <div id="item1">
+            <h1 id="head1">Carina's Art Page</h1>
+            <h1 id="headback">Carina's Art Page</h1>
+        </div>
+        <div id="item2">
+            <img draggable="false" src="Index/Character.png" id="char" onmouseover="hoverchar()" onmouseleave="releasechar()">
+        </div>
+        <div id="item3">
+            <a href="about.html" id="abouta" ><img draggable="false" src="Index/About Me.png" id="about" class="icon" alt="About Me Link"></a>
+        </div>
+        <div id="item4">
+            <a href="commission.html" id="comma" ><img draggable="false" src="Index/Commission.png" id="com" class="icon"></a>
+        </div>
+        <div id="item5">
+            <a href="gallery.html" id="galla" ><img draggable="false" src="Index/Gallery.png" id="gall" class="icon"></a>
+        </div>
+        <div id="item6">
+            <a href="faq.html" id="faqa" ><img draggable="false" src="Index/FAQ.png" id="faq" class="icon"></a>
+        </div>
+    </div>
+    <div id="bannerbot">
+        <img class="banner" src="Index/Banner Bottom.png">
+    </div>
+ </body>
+</html>
