@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style>
+        @font-face {
+            font-family: Rumble;
+            src: url(Fonts/rumble_strike/Rumble\ Strike.otf);
+        }
+        body {
+            height: 100vh;
+            background-color: #FFF9F4;
+            margin: 0;
+        }
+        * {
+            position: absolute;
+        }
+        #nav {
+            width: 20vw;
+            height: 100vh;
+            background-color: #7594e9;
+        }
+        #back img{
+            width: 3vw;
+            margin: 1vw;
+        }
+        #nav a div {
+            left: 2.5vw;
+            background-color: #fffaf4;
+            height: 25vh;
+            width: 15vw;
+            font-size: 2.4vw;
+            text-align: center;
+            line-height: 25vh;
+            color: black;
+            border-radius: 30px;
+        }
+        #nav a div:hover {
+            background-color: #f6C979;
+        }
+        #nav a div:active {
+            background-color: #7594e9;
+            border: 1px solid black;
+        }
+        #about {
+            top: 14vh;
+        }
+        #comm {
+            top: 42vh;
+        }
+        #gall {
+            top: 70vh;
+        }
+        #content {
+            width: 80vw;
+            left: 20vw;
+        }
+        #content ol * {
+            position: static;
+        }
+        h1 {
+            text-align: center;
+            width: 100%;
+            font-size: 5vw;
+            font-family: Rumble,cursive;
+            color: #7594e9;
+        }
+        ol * {
+            font-family: Rumble, cursive;
+            font-size: 3vw;
+        }
+        ol {
+            width: 70%;
+            left: 15%;
+            top: 20vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <a href="index.html" id="back"><img src="Faq/Back.png"></a>
+        <a id="about" href="about.html">
+            <div>About</div>
+        </a>
+        <a id="comm" href="commission.html">
+            <div>Commission</div>
+        </a>
+        <a id="gall" href="gallery.html">
+            <div>Gallery</div>
+        </a>
+    </div>
+    <div id="content">
+        <h1>FAQ</h1>
+        <ol>
+            <li>What Program/App do you use?<br>Procreate</li><br>
+            <li>How long does an art piece take?<br>About 3-10 hours for a fully rendered piece, but sketches and flat colors are usually done in less than 2-3 hours</li><br>
+            <li>Do you do animations?<br>Yes, but I'm not opening commisions for animated works yet.</li>
+        </ol>
+    </div>
+</body>
+</html>
