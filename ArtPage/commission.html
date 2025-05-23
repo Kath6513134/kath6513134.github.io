@@ -174,10 +174,9 @@
             console.log(x)
             X = document.getElementById("popup")
             X.getElementsByTagName("img")[0].src = "Commission/"+x+".png"
-            if (x[0]=='d') {
+            if (x[0]=='D') {
                 X.getElementsByTagName("p")[0].innerHTML = x+"!"
             } else {
-                console.log('d')
                 X.getElementsByTagName("p")[0].innerHTML = "Prices for "+x
             }
             X.style.display = "block"

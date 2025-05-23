@@ -62,12 +62,12 @@
                 height: 25px;
                 border: 2px solid black;
                 background-color: #7594e9;
-                width: 80%;
+                width: 100%;
                 color:#000000;
                 font-size: 20px;
             }
             input:focus {
-                background-color: #5A7DE0;
+                background-color: #5378df;
             }
             textarea {
                 height: 25px;
@@ -75,12 +75,13 @@
                 background-color: #7594e9;
                 width: 60%;
                 min-height: 50px;
-                max-width: 80%;
+                max-width: 100%;
                 color:#000000;
                 font-size: 20px;
+                max-height: 400px;
             }
             textarea:focus {
-                background-color: #5A7DE0;
+                background-color: #5378df;
             }
         }
         #item3,#item4 {
@@ -88,14 +89,23 @@
                 font-size: 20px;
                 line-height: 15px;
             }
+            input {
+                accent-color: #7594e9;
+            }
+            input:hover {
+                accent-color: #5378df;
+            }
             input:checked {
                 accent-color: #000000;
+            }
+            input:hover+label {
+                color: #5378df;
             }
             input:checked+label{
                 color: #000000;
             }
         }
-        button {
+        input[type=reset],input[type=button],button {
             margin-top: 15px;
             background-color: #7594e9;
             color: #000000;
@@ -106,7 +116,7 @@
             height: 35px;
             width: 100px;
         }
-        button:hover {
+        input[type=reset]:hover, input[type=button]:hover,button:hover {
             background-color: #000000;
             color: #f6C979;
         }
@@ -116,6 +126,39 @@
             gap: 10px;
             padding: 10px;
         }
+        a {
+            display: block;
+            color: #000000;
+            font-size: 20px;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+        }
+        #back {
+            top: 0;
+            right: 0;
+            position: absolute;
+            border-radius: 10px;
+            width: 10vw;
+            background-color: #f6C979;
+            border: 1px solid black;
+        }
+        #back:hover a {
+            color: #5378df;
+        }
+        #item7 {
+            flex-direction: row;
+            display: none;
+        }
+
+        #item7 p {
+            color: #000000;
+            font-size: 30px;
+            line-height: 30px;
+            display: inline;
+            margin-right: 20px;
+        }
+
         @media only screen and (max-width: 600px) {
             body {
                 background-image: none;
@@ -127,10 +170,14 @@
             #item4 {grid-area: 4 / 1 / span 1 / span 12;}
             #item5 {grid-area: 5 / 1 / span 1 / span 12;}
             #item6 {grid-area: 6 / 1 / span 1 / span 12;}
-            
+
             input:not([type=radio]),textarea {
                 width: 100% !important;
                 max-width: 100% !important;
+            }
+
+            textarea {
+                max-height: 700px !important;
             }
         }
         @media only screen and (min-width: 600px) {
@@ -140,22 +187,100 @@
             #item4 {grid-area: 3 / 5 / span 1 / span 4;}
             #item5 {grid-area: 4 / 1 / span 1 / span 8;}
             #item6 {grid-area: 5 / 1 / span 1 / span 8;}
+            #item7 {grid-area: 6 / 1 / span 1 / span 8;}
         }
     </style>
+    <script>
+        const compositions = ['Head','Half','Full']
+        const styles = ['Sketch','Flat','Fully']
+        const prices = [[35,55,75],[40,100,120],[150,200,270]]
+        
+        let comp = 4
+        let sty = 4
+
+        let price = 0
+        
+        function output() {
+            let composition = document.getElementsByName("composition")
+            for (let i=0; i<composition.length; i++) {
+                if (composition[i].checked) {comp=i}
+            }
+
+            let style = document.getElementsByName("style")
+            for (let i=0; i<style.length; i++) {
+                if (style[i].checked) {sty=i}
+            }
+            
+            if (comp==4 || sty==4) {
+                alert('Please select Style and Composition')
+            } else {
+                price = prices[sty][comp]
+                document.getElementById("item7").style.display = 'block'
+                document.getElementById("price").innerHTML = "Price: IDR"+price+".000,-"
+            }
+        }
+        
+        function confirmation(event) {
+            let name = document.getElementById("name").value
+            let email = document.getElementById("email").value
+            let style = ""
+            let composition = ""
+            switch (sty) {
+                case 0:
+                    style = "Sketch"
+                    break
+                case 1:
+                    style = "Flat Color"
+                    break
+                case 2:
+                    style = "Fully Rendered"
+                    break
+            }
+
+            switch (comp) {
+                case 0:
+                    composition = "Head Shot"
+                    break
+                case 1:
+                    composition = "Half Body"
+                    break
+                case 2:
+                    composition = "Full Body"
+                    break
+            }
+
+            price = "IDR"+prices[sty][comp]+".000,-"
+
+            yesno = confirm("Name: "+name+"\nEmail: "+email+"\nStyle: "+style+"\nComposition: "+composition+"\nPrice: "+price)
+
+            if (yesno) {
+                alert("Your response has been recorded. Thank you. You may be expecting an email.")
+                window.location.href = "index.html"
+                return false
+            } else {
+                alert("Please revise the information you need to revise.")
+                event.preventDefault()
+                return false
+            }
+        }
+        </script>
 </head>
 <body>
     <div id="content">
         <h1>Commission Forms</h1>
         <!--Name, Email, Type of Art, Description-->
-        <form>
+        <div id="back">
+            <a href="commission.html">Back</a>
+        </div>
+        <form onsubmit="return confirmation(event)">
             <div id="gridContainer">
                 <div id="item1">
                     <label for="name">NAME:</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
                 </div>
                 <div id="item2">
                     <label for="email">EMAIL</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" required placeholder="Example123@gmail.com">
                 </div>
                 <div id="item3">
                     <label>STYLE</label><br>
@@ -177,16 +302,18 @@
                 </div>
                 <div id="item5">
                     <label for="Desc">DESCRIPTION</label>
-                    <textarea id="Desc">Insert description here...</textarea>
+                    <textarea id="Desc" required placeholder="Insert Description Here..." name="description"></textarea>
                 </div>
                 <div id="item6">
-                    <button id="reset" onclick="reset()">Reset</button>
-                    <button id="submit" onclick="output()">Submit</button>
+                    <input type="reset" onclick="document.getElementById('item7').style.display='none';comp = 4;sty = 4;">
+                    <button type="button" id="submit" onclick="output()">Submit</button>
+                </div>
+                <div id="item7">
+                    <p id="price"></p>
+                    <button id="confirm" type="submit">Confirm</button>
                 </div>
             </div>
         </form>
-        <div id="summary">
-        </div>
     </div>
 </body>
 </html>
