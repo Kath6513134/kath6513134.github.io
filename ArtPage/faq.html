@@ -1,14 +1,193 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
-    <title>title</title>
+    <link rel="icon" href="Icon.png">
+    <title>FAQ</title>
     <style>
         @font-face {
             font-family: Rumble;
             src: url(Fonts/rumble_strike/Rumble\ Strike.otf);
         }
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+        }
         body {
+            background-color: #FFF9F4;
+            overflow-x: hidden;
+        }
+        #gridContainer {
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            gap: 10px;
+            padding: 10px;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            width: 100%;
+            font-family: Rumble,cursive;
+            color: #7594e9;
+        }
+        ol * {
+            font-family: Rumble,cursive;
+        }
+        #item1 {
+            display: flex;
+            flex-direction: column;
+            background-color: #7594e9;
+            height: 100vh;
+            width: 100%;
+        }
+        #back img {
+            width: 20%;
+        }
+        @media only screen and (max-width: 600px) {
+            #menu-toggle {
+                display: none;
+            }
+            #menu {
+                z-index: 5;
+                border: 2px solid black;
+                position: fixed;
+                background-color: #7594e9;
+                width: 15vw;
+                height: 15vw;
+                margin: 1vw;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                padding: 2vw 0;
+            }
+            #menu span {
+                margin: auto;
+                width: 7vw;
+                height: 1vw;
+                background-color: #FFF9F4;
+            }
+            #menu:hover {
+                background-color: #f6C979 !important;
+            }
+            #menu-toggle:checked+#menu {
+                background-color: #FFF9F4;
+            }
+            #menu-toggle:checked+#menu span {
+                background-color: #7594e9;
+            }
+            #menu-toggle:checked~#gridContainer>#item1 {
+                display: flex !important;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            #back img {
+                top: 3vw;
+                max-width: 10vw;
+                max-height: 15vh;
+                position: absolute;
+                right: 3vw;
+            }
+            #item1 {
+                z-index: 4;
+                background-color: #7594e9;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 80vw;
+                display: none;
+                padding-top: 10vw;
+                font-weight: bold;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            }
+            #item1 a:first-of-type {
+                height: 0;
+                background-color: transparent;
+                color: transparent;
+            }
+            #item1 a:first-of-type:hover {
+                background-color: transparent;
+                color: transparent;
+            }
+            #item1 a {
+                margin: 0 5vw;
+                border-radius: 20px;
+                width: 70vw;
+                height: 25vh;
+                background-color: #FFF9F4;
+                text-decoration: none;
+                text-align: center;
+                line-height: 25vh;
+                font-size: 30px;
+                color: #7594e9;
+            }
+            #item1 a:hover {
+                background-color: #f6C979;
+                color: #000000;
+            }   
+            
+            h1 {
+                width: 100%;
+                font-size: 100px;
+            }
+            ol * {
+                font-size: 35px;
+            }
+            ol {
+                margin: 20px;
+                width: auto;
+                top: 20vh;
+            }
+            #item2 {grid-area: 1 / 1 / span 1 / span 12;}
+            #item3 {grid-area: 2 / 1 / span 1 / span 12;}
+        }
+        @media only screen and (min-width: 600px) {
+            #menu-toggle, label {
+                display: none;
+            }
+
+            #item1 {
+                grid-area: 1 / 1 / span 2 / span 4;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+            #item1 *:not(:first-of-type) {
+                font-family: Arial, Helvetica, sans-serif;
+                height: 25vh;
+                margin: 10%;
+                width: 80%;
+                border-radius: 25px;
+                background-color: #FFF9F4;
+                text-align: center;
+                text-decoration: none;
+                font-size: 20px;
+                color: #7594e9;
+                line-height: 25vh;
+                font-weight: bold;
+            }
+            #item1 *:not(:first-of-type):hover {
+                background-color: #f6C979;
+                color: #000000;
+            }
+            #item2 {
+                grid-area: 1 / 5 / span 1 / span 8;
+                height: 120px;
+            }
+            #item3 {grid-area: 2 / 5 / span 1 / span 8;}
+
+            h1 {
+                font-size: 100px;
+                line-height: 120px;
+            }
+
+            ol * {
+                font-size: 35px;
+            }
+        }
+        /*body {
             height: 100vh;
             background-color: #FFF9F4;
             margin: 0;
@@ -74,29 +253,44 @@
             width: 70%;
             left: 15%;
             top: 20vh;
-        }
+        }*/
     </style>
 </head>
 <body>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <div id="gridContainer">
+        <div id="item1">
+            <a href="index.html" id="back"><img src="Faq/Back.png"></a>
+            <a id="about" href="about.html">
+                <div>About</div>
+            </a>
+            <a id="comm" href="commission.html">
+                <div>Commission</div>
+            </a>
+            <a id="gall" href="gallery.html">
+                <div>Gallery</div>
+            </a>
+        </div>
+        <div id="item2">
+            <h1>FAQ</h1>
+        </div>
+        <div id="item3">
+            <ol>
+                <li><b>What Program/App do you use?</b><br>Procreate</li><br>
+                <li><b>How long does an art piece take?</b><br>About 3-10 hours for a fully rendered piece, but sketches and flat colors are usually done in less than 2-3 hours</li><br>
+                <li><b>Do you do animations?</b><br>Yes, but I'm not opening commisions for animated works yet.</li>
+            </ol>
+        </div>
+    </div>
+    <!--
     <div id="nav">
-        <a href="index.html" id="back"><img src="Faq/Back.png"></a>
-        <a id="about" href="about.html">
-            <div>About</div>
-        </a>
-        <a id="comm" href="commission.html">
-            <div>Commission</div>
-        </a>
-        <a id="gall" href="gallery.html">
-            <div>Gallery</div>
-        </a>
     </div>
     <div id="content">
-        <h1>FAQ</h1>
-        <ol>
-            <li>What Program/App do you use?<br>Procreate</li><br>
-            <li>How long does an art piece take?<br>About 3-10 hours for a fully rendered piece, but sketches and flat colors are usually done in less than 2-3 hours</li><br>
-            <li>Do you do animations?<br>Yes, but I'm not opening commisions for animated works yet.</li>
-        </ol>
-    </div>
+    </div>-->
 </body>
 </html>
