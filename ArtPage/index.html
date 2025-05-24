@@ -31,17 +31,16 @@
             max-height: 75vh;
         }
         #item1 {
-            grid-area: heading;
-            text-align: center;
-            height: fit-content;
+            display: grid;
             min-height: 60px;
         }
         #item1 * {
-            font-size: 35px;
+            grid-area: 1/1/span 1/span 1;
             width: 100%;
+            text-align: center;
+            font-size: 35px;
         }
         #head1 {
-            position: absolute;
             font-family: "Bigfat", cursive;
             color: #FFBC5E;
             text-shadow:
@@ -54,8 +53,6 @@
             z-index: 2;
         }
         #headback {
-            position: absolute;
-            text-align: center;
             font-family: "BigfatX", cursive;
             color: #000000;
         }
@@ -94,12 +91,6 @@
             #bannerbot {
                 position: absolute;
                 bottom: 0;
-            }
-            #item1 {
-                min-height: 76px;
-            }
-            #item1 * {
-                width: 50%;
             }
         }
         @media only screen and (min-width: 900px) {

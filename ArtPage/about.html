@@ -33,11 +33,11 @@
             width: 100%;
         }
         @media only screen and (max-width: 600px) {
-            #item1 {grid-area: 2 / 8 / span 1 / span 5;}
-            #item2 {grid-area: 1 / span 12;}
-            #item3 {grid-area: 3 / span 11;}
-            #item4 {grid-area: 2 / span 7;}
-            #item5 {grid-area: 4 / span 12;}
+            #item1 {grid-area: 2 / 8 / span 3 / span 5;}
+            #item2 {grid-area: 1 / 1 / span 1 /span 12;}
+            #item3 {grid-area: 5 / 1 / span 2 / span 11;}
+            #item4 {grid-area: 2 / 1 / span 3 / span 7;}
+            #item5 {grid-area: 7 / 1 / span 1 / span 12;}
             #flexContainer {
                 width: 30vh !important;
                 justify-content: end;
@@ -47,6 +47,21 @@
                 min-width: 80px;
                 width: 10vh;
             }
+            #star {grid-area: 2 / 8 / span 1 / span 2;}
+            #minichar {grid-area: 4 / 8 / span 1 / span 2;}
+            #tie {
+                grid-area: 5 / 10 / span 1 / span 3;
+            }
+            #tie img {
+                width: 60%;
+                margin-left: 20%;
+            }
+            #strawberry {
+                grid-area: 7 / 12 / span 1 / span 1;
+                z-index: 4;
+                }
+                /*
+                */
         }
         @media only screen and (min-width: 600px) {
             #item1 {grid-area: 1 / 8 / span 3 / span 5;}
@@ -58,17 +73,14 @@
                 height: auto;
                 width: 95%;
             }
-            #star {
-                grid-area: 2 / 8 / span 1 / span 1;
-            }
             #star img {
                 height: auto;
             }
+            #star {grid-area: 2 / 8 / span 1 / span 1;}
             #minichar {grid-area: 3 / 8 / span 1 / span 2;}
             #tie {grid-area: 2 / 4 / span 1 / span 2;}
             #tie img {
                 width: 50%;
-                height: auto;
                 margin-top: -5%;
             }
             #strawberry {
@@ -81,7 +93,7 @@
                 margin-top: -15%;
             }
         }
-        img {
+        img:not(#tie *, #strawberry *) {
             height: 100%;
             object-fit: contain;
         }
