@@ -20,8 +20,10 @@
             overflow-x: hidden;
         }
         #gridContainer {
+            position: relative;
             display: grid;
             grid-template-columns: repeat(12,1fr);
+            grid-template-rows: 120px auto;
             gap: 10px;
             padding: 10px;
             padding: 0;
@@ -143,7 +145,7 @@
             #item2 {grid-area: 1 / 1 / span 1 / span 12;}
             #item3 {grid-area: 2 / 1 / span 1 / span 12;}
         }
-        @media only screen and (min-width: 600px) {
+        @media only screen and (min-width: 600px) {            
             #menu-toggle, label {
                 display: none;
             }
@@ -153,11 +155,12 @@
                 height: 100vh;
                 display: flex;
                 flex-direction: column;
+                justify-content: space-around;
             }
             #item1 *:not(:first-of-type) {
                 font-family: Arial, Helvetica, sans-serif;
                 height: 25vh;
-                margin: 10%;
+                margin: 0 10%;
                 width: 80%;
                 border-radius: 25px;
                 background-color: #FFF9F4;
@@ -174,86 +177,17 @@
             }
             #item2 {
                 grid-area: 1 / 5 / span 1 / span 8;
-                height: 120px;
             }
             #item3 {grid-area: 2 / 5 / span 1 / span 8;}
 
             h1 {
                 font-size: 100px;
-                line-height: 120px;
             }
 
             ol * {
                 font-size: 35px;
             }
         }
-        /*body {
-            height: 100vh;
-            background-color: #FFF9F4;
-            margin: 0;
-        }
-        * {
-            position: absolute;
-        }
-        #nav {
-            width: 20vw;
-            height: 100vh;
-            background-color: #7594e9;
-        }
-        #back img{
-            width: 3vw;
-            margin: 1vw;
-        }
-        #nav a div {
-            left: 2.5vw;
-            background-color: #fffaf4;
-            height: 25vh;
-            width: 15vw;
-            font-size: 2.4vw;
-            text-align: center;
-            line-height: 25vh;
-            color: black;
-            border-radius: 30px;
-        }
-        #nav a div:hover {
-            background-color: #f6C979;
-        }
-        #nav a div:active {
-            background-color: #7594e9;
-            border: 1px solid black;
-        }
-        #about {
-            top: 14vh;
-        }
-        #comm {
-            top: 42vh;
-        }
-        #gall {
-            top: 70vh;
-        }
-        #content {
-            width: 80vw;
-            left: 20vw;
-        }
-        #content ol * {
-            position: static;
-        }
-        h1 {
-            text-align: center;
-            width: 100%;
-            font-size: 5vw;
-            font-family: Rumble,cursive;
-            color: #7594e9;
-        }
-        ol * {
-            font-family: Rumble, cursive;
-            font-size: 3vw;
-        }
-        ol {
-            width: 70%;
-            left: 15%;
-            top: 20vh;
-        }*/
     </style>
 </head>
 <body>
@@ -287,10 +221,5 @@
             </ol>
         </div>
     </div>
-    <!--
-    <div id="nav">
-    </div>
-    <div id="content">
-    </div>-->
 </body>
 </html>
