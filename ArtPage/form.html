@@ -27,9 +27,6 @@
         }
         #content {
             position: absolute;
-            width: 80vw;
-            left: 10vw;
-            top: 8vw;
         }
         h1 {
             margin: 15px 0 0;
@@ -158,7 +155,7 @@
             display: inline;
             margin-right: 20px;
         }
-
+        
         @media only screen and (max-width: 600px) {
             body {
                 background-image: none;
@@ -169,15 +166,31 @@
             #item3 {grid-area: 3 / 1 / span 1 / span 12;}
             #item4 {grid-area: 4 / 1 / span 1 / span 12;}
             #item5 {grid-area: 5 / 1 / span 1 / span 12;}
-            #item6 {grid-area: 6 / 1 / span 1 / span 12;}
-
+            #item6 {
+                grid-area: 6 / 1 / span 1 / span 12;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
             input:not([type=radio]),textarea {
                 width: 100% !important;
                 max-width: 100% !important;
             }
-
+            input[type=reset], button {
+                width: 49% !important;
+            }
             textarea {
                 max-height: 700px !important;
+            }
+            
+            #content {
+                width: 93vw;
+                margin: 3vw 0 0 3vw;
+                left: 0;
+            }
+            #back {
+                width: 15vw;
             }
         }
         @media only screen and (min-width: 600px) {
@@ -188,6 +201,11 @@
             #item5 {grid-area: 4 / 1 / span 1 / span 8;}
             #item6 {grid-area: 5 / 1 / span 1 / span 8;}
             #item7 {grid-area: 6 / 1 / span 1 / span 8;}
+            #content {
+                width: 80vw;
+                left: 10vw;
+                top: 8vw;
+            }
         }
     </style>
     <script>
