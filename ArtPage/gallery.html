@@ -157,6 +157,45 @@
                 margin-right: 25px;
             }
         }
+        #links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        #links a {
+            width: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            background-color: #FFF9F499;
+            text-decoration: none;
+            color: black;
+            white-space: nowrap; 
+            transition: background-color 0.2s ease;
+        }
+
+        #links img {
+            height: 24px;
+            width: auto;
+        }
+
+        #links p {
+            margin: 0;
+        }
+
+        #links a:hover {
+            background-color: #FFF9F4;
+        }
+
+        #links a:active {
+            background-color: #FFBC5E;
+        }
     </style>
     <script>
         let ind=1
@@ -260,6 +299,24 @@
         <a href="about.html" id="abouta" ><img draggable="false" src="Gallery/about.png" id="about" class="icon" alt="About Me Link"></a>
         <a href="commission.html" id="comma" ><img draggable="false" src="Gallery/coms.png" id="commission" class="icon"></a>
         <a href="faq.html" id="faqa" ><img draggable="false" src="Gallery/faq.png" id="faq" class="icon"></a>        
+    </div>
+    <div id="contact">
+        <h3>Contact Me!</h3>
+        <div id="flex">
+            <img src="Carina.jpg">
+            <div id="flex2">
+                <p>Name: Carina Bernadette</p>
+                <p>Phone Number: +6281110111213</p>
+                <p>Email: carina.bernadette@gmail.com</p>
+            </div>
+        </div>
+        <div id="links">
+            <a target="_blank" href="https://linktr.ee/guoccarmole"><img src="Linktree.png"><p>@Guoccarmole</p></a>
+            <a target="_blank" href="https://www.instagram.com/guoccarmole"><img src="Instagram.png"><p>@guoccarmole</p></a>
+            <a target="_blank" href="https://x.com/guoccarsmol"><img src="Twitter.png"><p>@guoccarsmol</p></a>
+            <a target="_blank" href="https://www.tumblr.com/guoccarmole"><img src="Tumblr.png"><p>@guoccarmole</p></a>
+            <a target="_blank" href="https://tiktok.com/@guoccarmole"><img src="Tiktok.png"><p>@guoccarmole</p></a>
+        </div>
     </div>
 </body>
 </html>
