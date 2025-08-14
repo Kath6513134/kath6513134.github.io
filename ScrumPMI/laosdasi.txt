@@ -1,0 +1,52 @@
+Alright — let’s expand the palettes with **secondary colors** for Scrum and PMI, plus a **unifying Home Page palette** that visually blends both methods while keeping them distinct.
+
+---
+
+## **Scrum Palette — Bright, Agile, Energetic**
+
+*(Agile, collaborative, creative feel)*
+
+* **Primary:** Vibrant Teal — `#00BFA5` | RGB(0, 191, 165)
+* **Secondary:** Scrum Sky Blue — `#29B6F6` | RGB(41, 182, 246)
+* **Accent 1:** Scrum Yellow — `#FFD54F` | RGB(255, 213, 79)
+* **Accent 2:** Sprint Orange — `#FF7043` | RGB(255, 112, 67)
+* **Background Light:** Soft Mint — `#E0F7FA` | RGB(224, 247, 250)
+* **Text/Dark:** Deep Charcoal — `#263238` | RGB(38, 50, 56)
+
+---
+
+## **PMI Palette — Structured, Professional, Reliable**
+
+*(Stable, corporate, precise feel)*
+
+* **Primary:** PMI Blue — `#1565C0` | RGB(21, 101, 192)
+* **Secondary:** Steel Navy — `#1E3A5F` | RGB(30, 58, 95)
+* **Accent 1:** Process Gray — `#90A4AE` | RGB(144, 164, 174)
+* **Accent 2:** Planning Gold — `#FFC107` | RGB(255, 193, 7)
+* **Background Light:** Document White — `#FAFAFA` | RGB(250, 250, 250)
+* **Text/Dark:** Graphite Black — `#212121` | RGB(33, 33, 33)
+
+---
+
+## **Home Page Palette — Balanced & Neutral Bridge**
+
+*(Blends the Scrum & PMI worlds seamlessly)*
+
+* **Primary:** Deep Blue-Teal Blend — `#007C91` | RGB(0, 124, 145)
+* **Secondary:** Slate Gray — `#546E7A` | RGB(84, 110, 122)
+* **Accent 1:** Energy Yellow — `#FFCA28` | RGB(255, 202, 40) *(ties to Scrum yellow & PMI gold)*
+* **Accent 2:** Coral Red — `#FF6F61` | RGB(255, 111, 97) *(friendly but bold)*
+* **Background Light:** Cloud White — `#F5F5F5` | RGB(245, 245, 245)
+* **Text/Dark:** Rich Charcoal — `#212121` | RGB(33, 33, 33)
+
+---
+
+💡 **Design Strategy:**
+
+* **Scrum Pages:** Use teal as the hero background with pops of yellow/orange.
+* **PMI Pages:** Use deep blue backgrounds with touches of gold/gray.
+* **Home Page:** Use the deep blue-teal blend as the main header color, so visitors instantly see a “middle ground” between the two worlds.
+
+---
+
+If you want, I can now make you a **CSS variables block** for all three palettes so you can simply drop it into your website’s style sheet. This will let you switch colors per page with one line of code. Would you like me to make that CSS set?

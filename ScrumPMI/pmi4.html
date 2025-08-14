@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="gen.css">
+        <style>
+            body {
+                background-color: #F5F5F5;
+                margin: 0;
+                overflow-x: hidden;
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: auto auto auto;
+                background-color: #FAFAFA;
+                color: #212121;
+            }
+            header {
+                grid-area: 1 / 1 / 1 / 1;
+                height: 30vh;
+                width: 100%;
+                border: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            header * {
+                margin: 20px;
+                text-align: center;
+            }
+            main {
+                padding: 5px 20px;
+            }
+            h1,h2,h3 {
+                color: #1565C0;
+                text-align: center;
+            }
+            #sect1 {
+                display: flex;
+                justify-content: center;
+            }
+            #sect1 *{
+                width: 60%;
+                margin: 0;
+            }
+            nav {
+                grid-area: 2/1/2/1;
+                z-index: 5;
+            }
+            main {
+                grid-area: 3/1/3/1;
+            }
+            h3 {
+                margin: 30px 0 10px;
+            }
+            #sect4 {
+                display: flex;
+                justify-content: space-around;
+            }
+            #sect4>* {
+                width: 47%;
+                border: 1px solid black;
+                background-color: #1E3A5F;
+                color: #a5b4bc;
+            }
+            #sect4>* h4 {
+                color: #FAFAFA;
+            }
+            h4 {
+                text-align: center;
+                margin: 15px;
+            }
+            .example {
+                margin: auto;
+                width: 85%;
+                display: none;
+                vertical-align: middle;
+            }
+            #sect5 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                border: 5px solid #1E3A5F;
+                min-height: 200px;
+            }
+            #ex1 {
+                display: block;
+            }
+            #sect5 button {
+                width: 5%;
+                background-color: #1E3A5F;
+                border: none;
+                color: #FFC107;
+                font-size: 6vw;
+                font-weight: 900;
+            }
+            #sect5 button:hover {
+                cursor: pointer;
+                color: #F5F5F5;
+            }
+            #leftb {
+                float: left;
+                opacity: 0;
+            }
+            #rightb {
+                float: right;
+            }
+            #sect3 {
+                display: grid;
+                margin: auto;
+                width: 420px;
+                height: 490px;
+                justify-items: center;
+                align-items: center;
+                grid-template-rows: repeat(7,70px);
+                grid-template-columns: repeat(7,70px);
+            }
+            .kas {
+                border: 1px solid black;
+                aspect-ratio: 1 / 1;
+                width: 100%;
+                max-height: 100%;
+                border-radius: 50%;
+            }
+            .kas:nth-of-type(even) {
+                z-index: 2;
+            }
+            #ka1 {
+                grid-area: 1 / 3 / span 2 / span 2;
+                background-color: #A8C5F0;
+            }
+            #ka2 {
+                grid-area: 2 / 4 / span 2 / span 2;
+                background-color: #A7D9B0;
+            }
+            #ka3 {
+                grid-area: 3 / 5 / span 2 / span 2;
+                background-color: #D6B2E6;
+            }
+            #ka4 {
+                grid-area: 4 / 5 / span 2 / span 2;
+                background-color: #9FD6CE;
+            }
+            #ka5 {
+                grid-area: 5 / 4 / span 2 / span 2;
+                background-color: #F9B39B;
+            }
+            #ka6 {
+                grid-area: 6 / 3 / span 2 / span 2;
+                background-color: #FBCFA5;
+            }
+            #ka7 {
+                grid-area: 5 / 2 / span 2 / span 2;
+                background-color: #FAE998;
+            }
+            #ka8 {
+                grid-area: 4 / 1 / span 2 / span 2;
+                background-color: #E8A4A4;
+            }
+            #ka9 {
+                grid-area: 3 / 1 / span 2 / span 2;
+                background-color: #AEB8EB;
+            }
+            #ka10 {
+                grid-area: 2 / 2 / span 2 / span 2;
+                background-color: #C8B4A6;
+            }
+            #ka1:hover {
+                background-color: #1E88E5;
+                z-index: 3;
+            }
+            #ka2:hover {
+                background-color: #43A047;
+                z-index: 3;
+            }
+            #ka3:hover {
+                background-color: #8E24AA;
+                z-index: 3;
+            }
+            #ka4:hover {
+                background-color: #00897B;
+                z-index: 3;
+            }
+            #ka5:hover {
+                background-color: #F4511E;
+                z-index: 3;
+            }
+            #ka6:hover {
+                background-color: #FB8C00;
+                z-index: 3;
+            }
+            #ka7:hover {
+                background-color: #FDD835;
+                z-index: 3;
+            }
+            #ka8:hover {
+                background-color: #C62828;
+                z-index: 3;
+            }
+            #ka9:hover {
+                background-color: #3949AB;
+                z-index: 3;
+            }
+            #ka10:hover {
+                background-color: #6D4C41;
+                z-index: 3;
+            }
+            #sect3 *{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            #sect3 *:hover {
+                cursor: pointer;
+            }
+            #popup {
+                grid-area: 3/1/span 3/span 6;
+                grid-area: 3/1/span 3/span 6;
+                background-color: #FFFFFFD3;
+                border: 1px solid black;
+                border-radius: 15px;
+                box-shadow: 5px 5px 10px 5px black;
+                width: 60%;
+                height: 60%;
+                z-index: 4;
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+            }
+            p {
+                margin: auto;
+                text-align: center;
+                margin: 10px;
+            }
+            /*
+            Primary:#1565C0
+            Secondary:#1E3A5F
+            Accent 1:#90A4AE
+            Accent 2:#FFC107
+            Background Light:#FAFAFA
+            Text/Dark:#212121
+            */
+            #sect2 {
+                display: flex;
+                flex-direction: row;
+                overflow-x: scroll;
+            }
+            .stages {
+                flex: 0 0 100%;
+            }
+            embed {
+                width: 100%;
+                height: 300px;
+            }
+        </style>
+        <script>
+            let exind=1
+            function right(){
+                if (exind!=10){
+                    document.getElementById("ex"+exind).style.display="None";
+                    exind+=1
+                    document.getElementById("ex"+exind).style.display="Block";
+                } 
+                if (exind==10) {
+                    document.getElementById("rightb").style.opacity=0
+                    document.getElementById("rightb").style.cursor="Default"
+                } else if (exind!=1) {
+                    document.getElementById("leftb").style.opacity=1
+                    document.getElementById("leftb").style.cursor="Pointer"
+                }
+            }
+            function left(){
+                if (exind!=1) {
+                    document.getElementById("ex"+exind).style.display="None";
+                    exind-=1
+                    document.getElementById("ex"+exind).style.display="Block";
+                } 
+                if (exind==1) {
+                    document.getElementById("leftb").style.opacity=0
+                    document.getElementById("leftb").style.cursor="Default"
+                } else if (exind!=10) {
+                    document.getElementById("rightb").style.opacity=1
+                    document.getElementById("rightb").style.cursor="Pointer"
+                }
+            }
+            function knowarea(ind){
+                text = [
+                    "Coordinates all other knowledge areas and ensures all project elements are working together effectively.",
+                    "Defines and manages the work to be done in the project, including requirements, deliverables, and boundaries.",
+                    "Involves planning, estimating, budgeting, and controlling project costs to ensure the project stays within the approved budget. ",
+                    "Establishes and manages communication processes to ensure effective information flow among stakeholders. ",
+                    "Ensures that the project meets the defined quality standards and requirements. ",
+                    "Focuses on creating and managing the project schedule, including defining activities, sequencing them, estimating durations, and developing the schedule. ",
+                    "Identifies, analyzes, and responds to potential risks that could impact the project. ",
+                    "Identifies, engages, and manages stakeholders to ensure their needs and expectations are met throughout the project.",
+                    "Focuses on acquiring, managing, and utilizing the resources needed for the project, including human resources, equipment, and materials. ",
+                    "Deals with acquiring goods and services from external vendors, including planning, conducting, and controlling procurements. ",
+                ]
+                document.getElementById("popup").style.display="Grid"
+                document.getElementById("texthere").innerHTML=text[ind-1]
+            }
+
+            function closed() {
+                document.getElementById("popup").style.display="None"
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h2>PMI: Precision, Process, and Predictability</h2>
+            <p>From idea to delivery, PMI offers a roadmap with clearly defined steps, roles, and outcomes.</p>
+        </header>
+        <nav>
+            <a href="index.html"><p>Home</p></a>
+            <a href="scrum.html"><p>Scrum</p></a>
+            <a href="pmi.html" class="current"><p>PMI</p></a>
+            <a href="comp.html"><p>Comparison</p></a>
+            <a href="resource.html"><p>Resources</p></a>
+            <a href="about.html"><p>About</p></a>
+        </nav>
+        <main>
+            <h1>PMI Command Center</h1>
+            <h3>What is PMI?</h3>
+            <div id="sect1">
+                <p>
+                    The Project Management Institute (PMI) promoted a globally recognized standard for managin projects - the PMBOK&reg;  Guide.<br><br>
+                    It's all about structured phases, detailed documentation, and minimizing risks in complex projects.<br><br>
+                    PMI is perfect for large-scale, high-stakes initiatives where clarity and control are essential.
+                </p>
+            </div>
+            <h3>The Five Process Groups</h3>
+            <div id="sect2">
+                <div id="st1" class="stages">
+                    <h4>Concept and Initialization</h4>
+                    <embed src="laosdasi.txt">
+                </div>
+                <div id="st2" class="stages">
+                    <h4>Planning</h4>
+                </div>
+                <div id="st3" class="stages">
+                    <h4>Execution</h4>
+                </div>
+                <div id="st4" class="stages">
+                    <h4>Performance and Monitoring</h4>
+                </div>
+                <div id="st5" class="stages">
+                    <h4>Closing</h4>
+                </div>
+            </div>
+            <h3>The 10 Knowledge Areas</h3>
+            <div id="sect3">
+                <div id="ka1" class="kas" onclick="knowarea(1)"><h4>Integration Management</h4></div>
+                <div id="ka2" class="kas" onclick="knowarea(2)"><h4>Scope Management</h4></div>
+                <div id="ka3" class="kas" onclick="knowarea(3)"><h4>Cost Management</h4></div>
+                <div id="ka4" class="kas" onclick="knowarea(4)"><h4>Communications Management</h4></div>
+                <div id="ka5" class="kas" onclick="knowarea(5)"><h4>Quality Management</h4></div>
+                <div id="ka6" class="kas" onclick="knowarea(6)"><h4>Schedule Management</h4></div>
+                <div id="ka7" class="kas" onclick="knowarea(7)"><h4>Risk Management</h4></div>
+                <div id="ka8" class="kas" onclick="knowarea(8)"><h4>Stakeholder Management</h4></div>
+                <div id="ka9" class="kas" onclick="knowarea(9)"><h4>Resource Management</h4></div>
+                <div id="ka10" class="kas" onclick="knowarea(10)"><h4>Procurement Management</h4></div>
+                <div id="popup" onclick="closed(1)">
+                    <!--<button id="close" onclick="close()">X</button>-->
+                    <p id="texthere"></p>
+                </div>
+            </div>
+            <h3>Why Choose PMI?</h3>
+            <div id="sect4">
+                <div class="left">
+                    <h4>Advantages</h4>
+                    <ul>
+                        <li>Highly structured approach</li>
+                        <li>Reduces project risks</li>
+                        <li>Globally recognized framework</li>
+                        <li>Clear documentation</li>
+                        <li>The PMBOK Guide outlines a set of globally recognized best practices for project management, covering various aspects of project execution. </li>
+                        <li>Promotes the ongoing development of project management skills and the refinement of processes to improve future project outcomes</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <h4>Disadvantages</h4>
+                    <ul>
+                        <li>Can be rigid in fast-changing envinronments</li>
+                        <li>Requires more time for planning and documentation</li>
+                        <li>May slow down innovation in creative projects</li>
+                    </ul>
+                </div>
+            </div>
+            <h3>PMI in Action</h3>
+            <div id="sect5">
+                <button onclick="left()" id="leftb"><</button>
+                <div id="ex1" class="example">
+                    <h4>Software Development</h4>
+                    <p>PMI methodologies are frequently used in software development to manage projects effectively, ensuring timely delivery and adherence to quality standards</p>
+                </div>
+                <div id="ex2" class="example">
+                    <h4>Construction</h4>
+                    <p>In construction, PMI principles can be applied to manage complex projects, mitigate risks, and ensure projects stay on schedule and within budget. </p>
+                </div>
+                <div id="ex3" class="example">
+                    <h4>HR Management</h4>
+                    <p>PMI methodologies can streamline HR processes like recruitment, training, and policy development, leading to improved efficiency and effectiveness. </p>
+                </div>
+                <div id="ex4" class="example">
+                    <h4>Operations</h4>
+                    <p>PMI can be applied to optimize manufacturing processes, supply chain operations, and IT infrastructure upgrades, leading to improved efficiency, cost reduction, and quality control. </p>
+                </div>
+                <div id="ex5" class="example">
+                    <h4>IT Infrastructure</h4>
+                    <p>IT firms can use PMI to manage upgrades, minimize disruptions, and ensure smooth transitions. </p>
+                </div>
+                <div id="ex6" class="example">
+                    <h4>IT Projects</h4>
+                    <p>A recent IT project saw a 30% improvement in project success rates by implementing PMI methodology, with clear milestones and robust monitoring. Another IT project using PMI resulted in a 15% cost reduction through meticulous resource monitoring. </p>
+                </div>
+                <div id="ex7" class="example">
+                    <h4>Infrastructure Projects</h4>
+                    <p>The Gordie Howe International Bridge project, a major cross-border infrastructure build, utilizes PMI standards for its management, highlighting the methodology's applicability to large-scale infrastructure development. </p>
+                </div>
+                <div id="ex8" class="example">
+                    <h4>Vodafone's Global LAN Project</h4>
+                    <p>Vodafone successfully used PMI standards to deliver its global GLAN project, achieving 100% site migration by the second attempt.</p>
+                </div>
+                <div id="ex9" class="example">
+                    <h4>Sydney Opera House</h4>
+                    <p>While a challenging project with delays, the Sydney Opera House project offers lessons in managing large, complex projects under the PMI framework</p>
+                </div>
+                <div id="ex10" class="example">
+                    <h4>Heathrow Airport Terminal 5</h4>
+                    <p>The construction of this terminal provides a successful case study of PRINCE2 methodology, a framework closely aligned with PMI, demonstrating its effectiveness in planning, execution, and delivery. </p>
+                </div>
+                <button onclick="right()" id="rightb">></button>
+            </div>
+            <!-- 
+                a comprehensive framework for project management that has been developed by the Project Management Institute (PMI). The methodology is applicable to various industries and project types and helps manage projects more efficiently and effectively. It is based on the PMBOK guide.
+                1. Phase-Based Approach
+                    PMI methodology divides project into 5 parts:
+                    Concept and Initialization: Defining the project and its objectives. 
+                    Planning: Developing the project management plan. 
+                    Execution: Carrying out the work defined in the plan. 
+                    Performance and Monitoring: Tracking progress, managing changes, and ensuring the project stays on track. 
+                    Closing: Formally ending the project or phase.
+    
+                2. Process-Oriented
+                    PMI methodology provides a framework of processes that guide project managers through each phase. This includes:
+                    The 10 knowledge areas that encompass the various aspects of project management:
+                    Integration, Scope, Cost, Communication, Quality, Schedule, Risk, Stakeholder, Resource, Procurement
+    
+                3. Emphasis on Best Practices
+                    
+                4. Adaptability
+                    While structured, the PMI methodology 
+    
+                5. Focus on Continuous Improvement
+                    The methodology . 
+    
+            -->
+    
+        </main>
+    </body>
+</html>

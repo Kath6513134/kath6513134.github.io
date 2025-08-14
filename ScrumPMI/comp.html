@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="gen.css">
+        <style>
+            /*
+            Primary: Deep Blue-Teal Blend — `#007C91` | RGB(0, 124, 145)
+            Secondary: Slate Gray — `#546E7A` | RGB(84, 110, 122)
+            Accent 1: Energy Yellow — `#FFCA28` | RGB(255, 202, 40) *(ties to Scrum yellow & PMI gold)*
+            Accent 2: Coral Red — `#FF6F61` | RGB(255, 111, 97) *(friendly but bold)*
+            Background Light: Cloud White — `#F5F5F5` | RGB(245, 245, 245)
+            Text/Dark: Rich Charcoal — `#212121` | RGB(33, 33, 33)
+            */
+            body {
+                background: linear-gradient(90deg, #E0F7FA 0 50%,#FAFAFA 50% 100%);
+                margin: 0;
+                overflow-x: hidden;
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: auto auto auto;
+            }
+            header {
+                grid-area: 1 / 1 / 1 / 1;
+                height: 30vh;
+                width: 100%;
+                border: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            header * {
+                margin: 20px;
+                text-align: center;
+            }
+            nav {
+                grid-area: 2 / 1 / 2 / 1;
+            }
+            main {
+                grid-area: 3 / 1 / 3 / 1;
+            }
+            h1,h2,h3 {
+                color:#007C91;
+            }
+            h1 {
+                width: 100%;
+                text-align: center;
+            }
+            h3 {
+                text-align: center;
+                margin: 30px 0 10px;
+            }
+            #sect1 {
+                display: grid;
+                grid-row: auto;
+                grid-column: auto;
+            }
+            #cont {
+                grid-area: 1/1/1/1;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            #cont div {
+                text-align: center;
+                width: 25%;
+                padding: 0;
+            }
+            #cont div * {
+                line-height: 30px;
+                margin: 0;
+            }
+            h4 {
+                margin: 0;
+                text-align: center;
+            }
+            .left h4{
+                color: #00BFA5;
+            }
+            .right h4{
+                color: #1565C0;
+            }
+            #hover {
+                grid-area: 1/1/1/1;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                z-index: 2;
+            }
+            #hover * {
+                height: 30px;
+                width: 50%;
+                margin: auto;
+            }
+            #hover *:not(#title):hover {
+                background-color: #007C91;
+                opacity: 0.1;
+            }
+            .left {
+                color: #263238;
+            }
+            .right {
+                color: #212121;
+            }
+            #sect2,#sect3 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            #sect2>*, #sect3>* {
+                width: 29%;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2>Scrum vs PMI - Which Path Fits Your Project?</h2>
+            <p>Some projects need speed and adaptability. Others demand structure and precision. Here's how they stack up.</p>
+        </header>
+        <nav>
+            <a href="index.html"><p>Home</p></a>
+            <a href="scrum.html"><p>Scrum</p></a>
+            <a href="pmi.html"><p>PMI</p></a>
+            <a href="comp.html"  class="current"><p>Comparison</p></a>
+            <a href="resource.html"><p>Resources</p></a>
+            <a href="about.html"><p>About</p></a>
+        </nav>
+        <main>
+            <h1>Scrum vs PMI Showdown</h1>
+            <h3>Side-by-Side Overview</h3>
+            <div id="sect1">
+                <div id="hover">
+                    <div id="title" class="hovercrit"></div>
+                    <div id="cr1" class="hovercrit" title="Approach"></div>
+                    <div id="cr2" class="hovercrit" title="Focus"></div>
+                    <div id="cr3" class="hovercrit" title="Documentation"></div>
+                    <div id="cr4" class="hovercrit" title="Team Structure"></div>
+                    <div id="cr5" class="hovercrit" title="Best For"></div>
+                    <div id="cr6" class="hovercrit" title="Delivery"></div>
+                    <div id="cr7" class="hovercrit" title="Adaptability"></div>
+                </div>
+                <div id="cont">
+                    <div class="left">
+                        <h4>Scrum</h4>
+                        <p class="crit1">Agile, iterative</p>
+                        <p class="crit2">Flexibility, quick delivery</p>
+                        <p class="crit3">Minimal, just enough to work</p>
+                        <p class="crit4">Small, cross-functional teams</p>
+                        <p class="crit5">Changing requirements, innovation</p>
+                        <p class="crit6">Frequent increments</p>
+                        <p class="crit7">High</p>
+                    </div>
+                    <div class="right">
+                        <h4>PMI</h4>
+                        <p class="crit1">Traditional, process-driven</p>
+                        <p class="crit2">Planning, risk management</p>
+                        <p class="crit3">Extensive, detailed</p>
+                        <p class="crit4">Hierarchial with defined roles</p>
+                        <p class="crit5">Large-scale, fixed scope projects</p>
+                        <p class="crit6">Final delivery after project completion</p>
+                        <p class="crit7">Low to medium</p>
+                    </div>
+                </div>
+            </div>
+            <h3>Strengths Showdown</h3>
+            <div id="sect2">
+                <div class="left">
+                    <h4>Scrum</h4>
+                    <ul>
+                        <li>Rapid feedback and adjustments</li>
+                        <li>Encourages creativity</li>
+                        <li>Higher team engagement</li>
+                        <li>Early value delivery</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <h4>PMI</h4>
+                    <ul>
+                        <li>Strong risk control</li>
+                        <li>Predictable schedules and budgets</li>
+                        <li>Clear accountability</li>
+                        <li>Globally recognized standard</li>
+                    </ul>
+                </div>
+            </div>
+            <h3>Weakness Face-off</h3>
+            <div id="sect3">
+                <div class="left">
+                    <h4>Scrum</h4>
+                    <ul>
+                        <li>Less suited for profjects with fixed scope or regulatory requirements</li>
+                        <li>Can cause scope creep without discipline</li>
+                        <li>Requires high team commitment</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <h4>PMI</h4>
+                    <ul>
+                        <li>Less adaptable to change</li>
+                        <li>Can slow down innovation</li>
+                        <li>Heavy on documentation and process</li>
+                    </ul>
+                </div>
+            </div>
+            <h3>Which One Should You Choose?</h3>
+            <div id="sect4"></div>
+            <h3>Final Thoughts</h3>
+            <div id="sect5"></div>
+        </main>
+    </body>
+</html>

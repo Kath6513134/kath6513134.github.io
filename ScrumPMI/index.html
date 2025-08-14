@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="gen.css">
+        <style>
+
+            body>* {
+                border: 1px solid black;
+                background-color: #F5F5F5;
+            }
+
+            h1,h2,h3 {
+                text-align: center;
+                color:#007C91;
+            }
+            :not(nav) p{
+                color:#212121;
+            }
+
+            header {
+                grid-area: 1 / 1 / span 1 / span 12;
+                height: 30vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            
+
+            #hero {
+                grid-area: 3 / 1 / span 1 / span 12;
+                text-align: center;
+
+            }
+
+            .hero {
+                width: 45%;
+                padding: 10px;
+            }
+
+            #left {
+                float: left;
+            }
+
+            #right {
+                float: right;
+            }
+
+            #teaser {
+                grid-area: 4 / 1 / span 1 / span 12;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                text-align: center;
+            }
+
+            .icon {
+                display: block;
+                border-radius: 10px;
+            }
+            .icon:hover{
+                box-shadow: 3px 3px 5px rgba(0,0,0,.5);
+            }
+            .icon h3{
+                font-size: 24px;
+            }
+            .icon img{
+                margin: 10%;
+                width: 80%;
+                max-height: 220px;
+                object-fit: contain;
+            }
+
+            .content {
+                display: none;
+                border-radius: 10px;
+            }
+            .content:hover{
+                box-shadow: 3px 3px 5px rgba(0,0,0,.5);
+            }
+
+            #teaser section {
+                margin: 20px 0;
+                width: 30%;
+                border: 1px solid black;
+                padding: 10px;
+                height: 300px;
+            }
+
+            #teaser h3 {
+                margin:0;
+            }
+
+            #why {
+                grid-area: 5 / 1 / span 1 / span 12;
+            }
+
+            footer {
+                grid-area: 6 / 1 / span 1 / span 12;
+                text-align:center;
+                padding: 5px 0;
+            }
+
+            .hero-link {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .hero-link:hover .hero {
+                background-color: #d3d3d3;
+            }
+        </style>
+        <script>
+            function SW(id){
+                if (id[id.length-1]=="i"){
+                    document.getElementById(id).style.display = "none";
+                    temp = id.slice(0,id.length-1)+"c";
+                    document.getElementById(temp).style.display = "block";
+                } else {
+                    document.getElementById(id).style.display = "none";
+                    temp = id.slice(0,id.length-1)+"i";
+                    document.getElementById(temp).style.display = "block";
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Project Management</h1>
+        </header>
+        <nav>
+            <a href="index.html" class="current"><p>Home</p></a>
+            <a href="scrum.html"><p>Scrum</p></a>
+            <a href="pmi.html"><p>PMI</p></a>
+            <a href="comp.html"><p>Comparison</p></a>
+            <a href="resource.html"><p>Resources</p></a>
+            <a href="about.html"><p>About</p></a>
+        </nav>
+        <div id="hero">
+            <h2>Two Paths. One Goal.</h2>
+            <p>Explore two of many project management methods and discover how each can lead to success</p>
+            <a href="scrum.html" class="hero-link">
+                <section id="left" class="hero">
+                    <h3>Scrum</h3>
+                    <p>An agile framework using sprints, roles, and artifacts for adaptive project delivery.</p>
+                </section>
+            </a>
+            <a href="pmi.html" class="hero-link">
+                <section id="right" class="hero">
+                    <h3>PMI</h3>
+                    <p>A structured methodology following PMBOK® standards to deliver predictable results.</p>
+                </section>
+            </a>
+        </div>
+        <div id="teaser">
+            <section onmouseup="SW(id)" id="scrumi" class="icon scrum">
+                <h3>Scrum Basics</h3>
+                <img src="ScrumLogo.png" alt="Scrum">
+            </section>
+            <section onmouseup="SW(id)" id="scrumc" class="content scrum">
+                Agile, fast-paced, and adaptive. Scrum focuses on short sprints, constant feedback, and teamwork to deliver
+                results quickly.
+            </section>
+            <section onmouseup="SW(id)" id="pmii" class="icon pmi">
+                <h3>PMI Foundations</h3>
+                <img src="PMILogo.svg" alt="PMI">
+            </section>
+            <section onmouseup="SW(id)" id="pmic" class="content pmi">
+                Structured, documented, and process-driven. PMI follows a step-by-step approach using defined process groups
+                and knowledge areas to ensure control and predictability.
+            </section>
+            <section onmouseup="SW(id)" id="vsi" class="icon comp">
+                <h3>Head-to-Head</h3>
+                <img src="VSLogo.png" alt="Comp">
+            </section>
+            <section onmouseup="SW(id)" id="vsc" class="content comp">
+                See Scrum and PMI side by side — compare flexibility, structure, risk handling, and best-fit project types.
+            </section>
+        </div>
+        <!--<div id="slider"></div>-->
+        <div id="why"></div>
+        <footer>Created by: Marcellino Michael Tanamal (12.2) and Karina Tara Hemanda (12.7)</footer>
+    </body>
+
+</html>

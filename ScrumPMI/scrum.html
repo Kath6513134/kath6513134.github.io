@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="gen.css">
+        <style>
+            body {
+                background-color: #E0F7FA;
+                margin: 0;
+                overflow-x: hidden;
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: auto auto auto;
+                color: #263238;
+            }
+            header {
+                grid-area: 1 / 1 / 1 / 1;
+                height: 30vh;
+                width: 100%;
+                border: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            header * {
+                margin: 20px;
+                text-align: center;
+            }
+            main {
+                padding: 5px 20px;
+            }
+            h1,h2,h3 {
+                color: #00BFA5;
+                text-align: center;
+            }
+            nav {
+                grid-area: 2/1/2/1;
+            }
+            main {
+                grid-area: 3/1/3/1;
+            }
+            #sect1 {
+                display: flex;
+                justify-content: center;
+            }
+            #sect1 *{
+                width: 60%;
+                margin: 0;
+            }
+            #sect2 {
+                display: flex;
+                justify-content: center;
+            }
+            #sect3 {
+                display: flex;
+                justify-content: center;
+            }
+            #sect3 img{
+                height: 300px;
+            }
+            #sect4 {
+                display: flex;
+                justify-content: center;
+            }
+            #sect4 *{
+                width: 60%;
+                margin: 0;
+            }
+            #sect5 {
+                display: flex;
+                justify-content: center;
+            }
+            h3 {
+                margin: 30px 0 10px;
+            }
+            #sect6 {
+                display: flex;
+                justify-content: space-around;
+            }
+            #sect6>* {
+                width: 47%;
+                border: 1px solid black;
+                background-color: #29B6F6;
+                color: #39474f;
+            }
+            #sect6>* h4 {
+                color: #000000;
+            }
+            h4 {
+                text-align: center;
+                margin: 15px;
+            }
+            .example {
+                margin: auto;
+                width: 85%;
+                display: none;
+                vertical-align: middle;
+            }
+            #sect7 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                border: 5px solid #29B6F6;
+                min-height: 200px;
+            }
+            #ex1 {
+                display: block;
+            }
+            #sect7 button {
+                width: 5%;
+                background-color: #29B6F6;
+                border: none;
+                color: #FF7043;
+                font-size: 6vw;
+                font-weight: 900;
+            }
+            #sect7 button:hover {
+                cursor: pointer;
+                color: #F5F5F5;
+            }
+            #leftb {
+                float: left;
+                opacity: 0;
+                cursor: default !important;
+            }
+            #rightb {
+                float: right;
+            }
+            /*
+            Primary:#00BFA5
+            Secondary:#29B6F6
+            Accent 1:#FFD54F
+            Accent 2:#FF7043
+            Background Light:#E0F7FA
+            Text/Dark:#263238
+            */
+        </style>
+        <script>
+            let exind=1
+            function right(){
+                if (exind!=5){
+                    document.getElementById("ex"+exind).style.display="None";
+                    exind+=1
+                    document.getElementById("ex"+exind).style.display="Block";
+                } 
+                if (exind==5) {
+                    document.getElementById("rightb").style.opacity=0
+                    document.getElementById("rightb").style.cursor="Default"
+                } else if (exind!=1) {
+                    document.getElementById("leftb").style.opacity=1
+                    document.getElementById("leftb").style.cursor="Pointer"
+                }
+            }
+
+            function left(){
+                if (exind!=1) {
+                    document.getElementById("ex"+exind).style.display="None";
+                    exind-=1
+                    document.getElementById("ex"+exind).style.display="Block";
+                } 
+                if (exind==1) {
+                    document.getElementById("leftb").style.opacity=0
+                    document.getElementById("leftb").style.cursor="Default"
+                } else if (exind!=5) {
+                    document.getElementById("rightb").style.opacity=1
+                    document.getElementById("rightb").style.cursor="Pointer"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h2>Scrum: Where Projects Run in Sprints, Not Marathons</h2>
+            <p>Get ready to meet the team, learn the rules, and run your first sprint.</p>
+        </header>
+        <nav>
+            <a href="index.html"><p>Home</p></a>
+            <a href="scrum.html" class="current"><p>Scrum</p></a>
+            <a href="pmi.html"><p>PMI</p></a>
+            <a href="comp.html"><p>Comparison</p></a>
+            <a href="resource.html"><p>Resources</p></a>
+            <a href="about.html"><p>About</p></a>
+        </nav>
+        <main>
+            <h1>Sprint Central</h1>
+            <h3>What is Scrum?</h3>
+            <div id="sect1">
+                <p>
+                    Scrum is an agile framework that uses iterative cycles called sprints to manage projects.<br><br>
+                    It involves specific roles, events, artifacts, and values.<br><br>
+                    Each sprint ends with a working result and new feedback, so teams can adapt quickly.
+                </p>
+            </div>
+            <h3>Meet the Scrum Squad</h3>
+            <div id="sect2">
+                <p>
+                    Product Owner — The Visionary. Keeps the product backlog in order.<br>
+                    Scrum Master — The Coach. Makes sure Scrum rules are followed, removes blockers.<br>
+                    Development Team — The Makers. Turn ideas into real, working increments.<br>
+                </p>
+            </div>
+            <h3>Scrum Values: The Team's Superpowers</h3>
+            <div id="sect3">
+                <img src="ScrumValues.png" alt="Scrum Values">
+            </div>
+            <h3>The Scrum Artifacts</h3>
+            <div id="sect4">
+                <p>
+                    Product Backlog - an emergent, ordered list of what is needed to improve the product.<br><br>
+                    Sprint Backlog - a plan by and for the Developers. It is a highly visible, real-time picture of the work that the Developers plan to accomplish during the Sprint in order to achieve the Sprint Goal.<br><br>
+                    Increment - a concrete stepping stone toward the Product Goal. Each Increment is additive to all prior Increments and thoroughly verified, ensuring that all Increments work together.
+                </p>
+            </div>
+            <h3>The Sprint Timeline</h3>
+            <div id="sect5">
+                <ol>
+                    <li>Sprint Planning - The team selects a set of high-priority items from the Product Backlog to work on during the sprint.</li><br>
+                    <li>Daily Scrum - The team meets daily to discuss progress, identify roadblocks, and coordinate their efforts.</li><br>
+                    <li>Sprint Review - At the end of the sprint, the team demonstrates the work they've completed to stakeholders and gathers feedback.</li><br>
+                    <li>Sprint Retrospective - The team reflects on the sprint, identifies areas for improvement, and adapts their process for the next sprint. </li><br>
+                </ol>
+            </div>
+            <h3>Why Scrum Works</h3>
+            <div id="sect6">
+                <div class="left">
+                    <h4>Boosts:</h4>
+                    <ul>
+                        <li>Fast feedback loops</li>
+                        <li>Handles changing requirements</li>
+                        <li>Improves teamwork</li>
+                        <li>Delivers value early</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <h4>Perfect for:</h4>
+                    <ul>
+                        <li>Creative projects</li>
+                        <li>Startups</li>
+                        <li>Software development</li>
+                        <li>Any project where requirements may change</li>
+                    </ul>
+                </div>
+            </div>
+            <h3>Scrum in Action</h3>
+            <div id="sect7">
+                <button onclick="left()" id="leftb"><</button>
+                <div id="ex1" class="example">
+                    <h4>Software Development</h4>
+                    <p>Teams can rapidly develop and deliver new software features. Using scrum, the team can break down the project into small, manageable tasks, prioritize them, and develop them over sprints.</p>
+                </div>
+                <div id="ex2" class="example">
+                    <h4>Marketing</h4>
+                    <p>By breaking down larger projects into smaller tasks, marketing teams can better align their output with the needs of their users. They can also quickly adjust their strategies based on feedback from their customers. This allows them to navigate ambiguity and ensure that their marketing efforts meet their users' needs.</p>
+                </div>
+                <div id="ex3" class="example">
+                    <h4>Spotify's Agile Model</h4>
+                    <p>Spotify uses a unique model incorporating squads, tribes, chapters, and guilds, demonstrating how Scrum can scale to support large organizations. </p>
+                </div>
+                <div id="ex4" class="example">
+                    <h4>Dutch Railways</h4>
+                    <p>A successful project using Scrum was implemented by Dutch Railways after a previous project failed to deliver, according to Applied Frameworks. </p>
+                </div>
+                <div id="ex5" class="example">
+                    <h4>Mayden's Transition</h4>
+                    <p>Mayden, a company specializing in healthcare applications, successfully transitioned from a waterfall approach to Scrum, says KnowledgeHut. </p>
+                </div>
+                <button onclick="right()" id="rightb">></button>
+            </div>
+    
+        </main>
+    </body>
+</html>
