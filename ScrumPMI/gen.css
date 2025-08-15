@@ -27,6 +27,7 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    z-index:10;
 }
 nav a{
     background-color: #FFCA28;
@@ -43,4 +44,5 @@ nav a p {
 }
 .current{
     background-color: #ff4d3d;
+
 }
