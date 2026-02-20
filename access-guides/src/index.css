@@ -458,15 +458,21 @@ code {
 
 .report-group {
     border-bottom: 1px solid #edebe9;
+    padding-bottom: 1rem;
 }
 
 .report-group-header {
     background: #f0f6ff;
-    padding: 0.6rem 1rem;
+    padding: 0.75rem 1rem;
     font-weight: 700;
     color: var(--secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
     border-bottom: 1px solid #c7ddf7;
+    margin-bottom: 0.75rem;
+}
+
+.report-group .styled-table {
+    margin-bottom: 0.75rem;
 }
 
 .report-group-footer {
