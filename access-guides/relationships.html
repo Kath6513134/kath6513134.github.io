@@ -50,6 +50,17 @@
             </p>
         </header>
 
+        <!-- Visual Overview -->
+        <section class="content-section">
+            <h2><i data-lucide="eye" style="margin-right: 0.5rem; vertical-align: middle;"></i> Visual Overview</h2>
+            <p>This is how relationships look in the Microsoft Access Relationships window. It provides a map of how
+                data flows between your tables.</p>
+            <div class="card" style="padding: 0.5rem; text-align: center; background: white; margin-top: 1rem;">
+                <img src="Relationships.png" alt="Access Relationships Diagram"
+                    style="max-width: 100%; height: auto; border-radius: 4px;">
+            </div>
+        </section>
+
         <!-- Types of Relationships -->
         <section class="content-section">
             <h2>Types of Relationships</h2>
@@ -137,7 +148,8 @@
             <div class="card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--secondary);">
                 <h3>Many-to-Many (M:N)</h3>
                 <p>A record in Table A can relate to many records in Table B, and vice-versa. This requires a
-                    <strong>Junction Table</strong> (a third table that holds the foreign keys of both tables).</p>
+                    <strong>Junction Table</strong> (a third table that holds the foreign keys of both tables).
+                </p>
                 <div class="relationship-diagram">
                     <div class="rel-box">Student</div>
                     <span class="rel-arrow">→</span>
@@ -338,13 +350,16 @@
             <div class="card example-card">
                 <h4>Example</h4>
                 <p>Before: Customer "Andi" has <code>CustomerID = 1</code>, and he has 2 orders both referencing
-                    <code>CustomerID = 1</code>.</p>
+                    <code>CustomerID = 1</code>.
+                </p>
                 <p style="margin-top: 0.5rem;">Action: You change Andi's <code>CustomerID</code> from <code>1</code> to
-                    <code>100</code>.</p>
+                    <code>100</code>.
+                </p>
                 <p style="margin-top: 0.5rem;">Result with Cascade Update <strong>ON</strong>: Both orders automatically
                     update to <code>CustomerID = 100</code>.</p>
                 <p style="margin-top: 0.5rem;">Result with Cascade Update <strong>OFF</strong>: The change is
-                    <strong>blocked</strong> because it would orphan the orders.</p>
+                    <strong>blocked</strong> because it would orphan the orders.
+                </p>
             </div>
         </section>
 
@@ -360,7 +375,8 @@
                 <p style="margin-top: 0.5rem;">Result with Cascade Delete <strong>ON</strong>: All of Andi's orders
                     (OrderID 101 and 102) are automatically deleted.</p>
                 <p style="margin-top: 0.5rem;">Result with Cascade Delete <strong>OFF</strong>: The delete is
-                    <strong>blocked</strong> because Andi still has orders.</p>
+                    <strong>blocked</strong> because Andi still has orders.
+                </p>
             </div>
             <div class="warning-box" style="margin-top: 1.5rem;">
                 <strong>⚠ Caution:</strong> Use Cascade Delete carefully! Deleting a record in the primary table can
