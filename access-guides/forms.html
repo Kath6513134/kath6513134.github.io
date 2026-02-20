@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Guides - Forms</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="database"></i>
+                <span>Access Guides</span>
+            </a>
+            <div class="nav-links">
+                <a href="tables.html" class="nav-link">
+                    <i data-lucide="table"></i>
+                    <span>Tables</span>
+                </a>
+                <a href="relationships.html" class="nav-link">
+                    <i data-lucide="git-merge"></i>
+                    <span>Relationships</span>
+                </a>
+                <a href="forms.html" class="nav-link active">
+                    <i data-lucide="file-text"></i>
+                    <span>Forms</span>
+                </a>
+                <a href="queries.html" class="nav-link">
+                    <i data-lucide="search"></i>
+                    <span>Queries</span>
+                </a>
+                <a href="reports.html" class="nav-link">
+                    <i data-lucide="bar-chart-3"></i>
+                    <span>Reports</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container page">
+        <header class="page-header">
+            <h1><i data-lucide="file-text" style="margin-right: 0.5rem; vertical-align: middle;"></i> Forms</h1>
+            <p class="page-intro">
+                Forms provide a user-friendly interface for data entry, viewing, and editing. Instead of typing directly
+                into a table datasheet, users interact with a designed layout with labels, text boxes, buttons, and
+                other controls.
+            </p>
+        </header>
+
+        <!-- Form (default) -->
+        <section class="content-section">
+            <h2><i data-lucide="file-text" style="margin-right: 0.5rem; vertical-align: middle;"></i> Form</h2>
+            <p>The default <strong>Form</strong> tool (found in <em>Create → Form</em>) automatically generates a simple
+                form based on the currently selected table or query. It displays one record at a time in a columnar
+                layout.</p>
+            <div class="card example-card" style="margin-top: 1rem;">
+                <h4>Example</h4>
+                <p>Select the <strong>Students</strong> table, then click <em>Create → Form</em>. Access instantly
+                    creates a form showing:</p>
+                <div class="form-preview" style="margin-top: 0.75rem;">
+                    <div class="form-field"><span class="form-label">Student ID:</span> <span
+                            class="form-value">1</span></div>
+                    <div class="form-field"><span class="form-label">First Name:</span> <span
+                            class="form-value">Andi</span></div>
+                    <div class="form-field"><span class="form-label">Last Name:</span> <span
+                            class="form-value">Pratama</span></div>
+                    <div class="form-field"><span class="form-label">Email:</span> <span
+                            class="form-value">andi@email.com</span></div>
+                    <div class="form-field"><span class="form-label">Major:</span> <span class="form-value">Computer
+                            Science</span></div>
+                    <div class="form-field"><span class="form-label">GPA:</span> <span class="form-value">3.85</span>
+                    </div>
+                </div>
+                <p class="example-text">↑ Navigate between records using the record navigation bar at the bottom.</p>
+            </div>
+            <div class="highlight-box" style="margin-top: 1rem;">
+                <p>This is the quickest way to create a form. Access automatically includes all fields from the selected
+                    table.</p>
+            </div>
+        </section>
+
+        <!-- Form Design -->
+        <section class="content-section">
+            <h2><i data-lucide="pen-tool" style="margin-right: 0.5rem; vertical-align: middle;"></i> Form Design</h2>
+            <p><strong>Form Design</strong> gives you a blank canvas and full control. You start from scratch and
+                manually add controls like text boxes, labels, combo boxes, buttons, images, and more.</p>
+            <div class="info-grid" style="margin-top: 1rem;">
+                <div class="card">
+                    <h4>Form Sections</h4>
+                    <ul class="styled-list">
+                        <li><strong>Form Header</strong> — Title, logo, navigation</li>
+                        <li><strong>Detail</strong> — Main body with fields/controls</li>
+                        <li><strong>Form Footer</strong> — Totals, buttons, info</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Common Controls</h4>
+                    <ul class="styled-list">
+                        <li><strong>Text Box</strong> — Displays/edits data</li>
+                        <li><strong>Combo Box</strong> — Dropdown list</li>
+                        <li><strong>List Box</strong> — Scrollable list</li>
+                        <li><strong>Command Button</strong> — Triggers actions</li>
+                        <li><strong>Subform</strong> — Embeds another form</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card example-card" style="margin-top: 1rem;">
+                <h4>Example: Student Registration Form (Design View)</h4>
+                <p>You drag a <em>Combo Box</em> for the "Major" field so users pick from a dropdown (Computer Science,
+                    Information Systems, Data Science) instead of typing freely. You add a <em>Command Button</em>
+                    labeled "Save & New" that saves the current record and clears the form for the next entry.</p>
+            </div>
+        </section>
+
+        <!-- Blank Form -->
+        <section class="content-section">
+            <h2><i data-lucide="file-stack" style="margin-right: 0.5rem; vertical-align: middle;"></i> Blank Form</h2>
+            <p>A <strong>Blank Form</strong> opens in Layout View with no pre-bound controls. You then drag fields from
+                the <em>Field List</em> pane onto the form.</p>
+            <div class="card example-card" style="margin-top: 1rem;">
+                <h4>Example</h4>
+                <p>You create a Blank Form and drag only <code>FirstName</code>, <code>LastName</code>, and
+                    <code>Email</code> from the Students table — creating a simple contact card form without showing GPA
+                    or other fields.</p>
+            </div>
+        </section>
+
+        <!-- Form Wizard -->
+        <section class="content-section">
+            <h2><i data-lucide="wand-2" style="margin-right: 0.5rem; vertical-align: middle;"></i> Form Wizard</h2>
+            <p>The <strong>Form Wizard</strong> walks you through a step-by-step process to create a form:</p>
+            <ol class="styled-list numbered" style="margin-top: 1rem;">
+                <li>Select the table/query and choose which fields to include</li>
+                <li>Choose a layout: Columnar, Tabular, Datasheet, or Justified</li>
+                <li>Name the form and choose whether to open it or modify it in Design View</li>
+            </ol>
+            <div class="card example-card" style="margin-top: 1rem;">
+                <h4>Example: Order Entry Wizard</h4>
+                <p>Step 1: Pick the Orders table → include OrderID, CustomerID, Product, Amount, OrderDate fields.</p>
+                <p>Step 2: Choose "Columnar" layout for one-record-at-a-time view.</p>
+                <p>Step 3: Name it "Order Entry Form" → Open it to enter data.</p>
+            </div>
+        </section>
+
+        <!-- Multiple Items -->
+        <section class="content-section">
+            <h2><i data-lucide="list" style="margin-right: 0.5rem; vertical-align: middle;"></i> Multiple Items</h2>
+            <p>A <strong>Multiple Items</strong> form displays multiple records at once in a tabular layout (similar to
+                a datasheet, but with more customization).</p>
+            <div class="card example-card" style="margin-top: 1rem;">
+                <h4>Example</h4>
+                <p>A Multiple Items form for the Students table shows all students in a grid. You can scroll to see
+                    everyone, edit any row inline, and even apply conditional formatting (e.g., highlight GPA &gt; 3.80
+                    in green).</p>
+                <div class="table-wrapper" style="margin-top: 0.75rem;">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Major</th>
+                                <th>GPA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Andi Pratama</td>
+                                <td>Computer Science</td>
+                                <td style="color: #16a34a; font-weight: 600;">3.85</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Siti Nurhaliza</td>
+                                <td>Information Systems</td>
+                                <td>3.72</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Budi Santoso</td>
+                                <td>Computer Science</td>
+                                <td>3.50</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Dewi Lestari</td>
+                                <td>Data Science</td>
+                                <td style="color: #16a34a; font-weight: 600;">3.91</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="example-text">↑ GPA values above 3.80 are highlighted in green.</p>
+            </div>
+        </section>
+
+        <!-- Navigation Form -->
+        <section class="content-section">
+            <h2><i data-lucide="compass" style="margin-right: 0.5rem; vertical-align: middle;"></i> Navigation Form</h2>
+            <p>A <strong>Navigation Form</strong> acts as a main menu or dashboard for your database application. It
+                uses tabs or buttons to navigate between different forms and reports.</p>
+            <div class="info-grid" style="margin-top: 1rem;">
+                <div class="card">
+                    <h4>Tab Layouts</h4>
+                    <ul class="styled-list">
+                        <li>Horizontal Tabs</li>
+                        <li>Vertical Tabs, Left</li>
+                        <li>Horizontal Tabs and Vertical Tabs</li>
+                        <li>Horizontal Tabs, 2 Levels</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Use Cases</h4>
+                    <ul class="styled-list">
+                        <li>Application-style interface</li>
+                        <li>Hiding the Navigation Pane</li>
+                        <li>Grouping related forms/reports</li>
+                        <li>Providing a clean user experience</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card example-card" style="margin-top: 1rem;">
+                <h4>Example: School Database Navigation</h4>
+                <p>Create a Horizontal Tabs navigation form with tabs: <strong>Students</strong> (opens Student Entry
+                    Form), <strong>Classes</strong> (opens Class List Form), <strong>Enrollments</strong> (opens
+                    Enrollment Form), <strong>Reports</strong> (opens Grade Report). Set this as the startup form in
+                    Access Options so it opens automatically.</p>
+            </div>
+        </section>
+
+        <!-- Split Form -->
+        <section class="content-section">
+            <h2><i data-lucide="split-square-horizontal" style="margin-right: 0.5rem; vertical-align: middle;"></i>
+                Split Form</h2>
+            <p>A <strong>Split Form</strong> displays two views simultaneously:</p>
+            <ul class="styled-list" style="margin-top: 0.5rem;">
+                <li>The <strong>top half</strong> shows a single record in Form View (detailed)</li>
+                <li>The <strong>bottom half</strong> shows all records in Datasheet View (grid)</li>
+            </ul>
+            <div class="card example-card" style="margin-top: 1rem;">
+                <h4>Example</h4>
+                <p>A Split Form for the Orders table: The <strong>top</strong> shows the details of the selected order
+                    (OrderID, Customer, Product, Amount, Date). The <strong>bottom</strong> shows a datasheet listing
+                    all orders. Click any row in the datasheet to instantly see its details above.</p>
+            </div>
+        </section>
+
+        <!-- Datasheet (DST) -->
+        <section class="content-section">
+            <h2><i data-lucide="layout-grid" style="margin-right: 0.5rem; vertical-align: middle;"></i> Datasheet (DST)
+            </h2>
+            <p>The <strong>Datasheet</strong> view displays data in a spreadsheet-like grid of rows and columns.</p>
+            <div class="highlight-box" style="margin-top: 1rem;">
+                <h4>Key Features</h4>
+                <ul class="styled-list">
+                    <li>Quick inline editing of multiple records</li>
+                    <li>Sorting and filtering built-in</li>
+                    <li>Can be used as a subform inside other forms</li>
+                    <li>Best for users comfortable with spreadsheet-style interfaces</li>
+                </ul>
+            </div>
+            <div class="card example-card" style="margin-top: 1rem;">
+                <h4>Example: Subform Usage</h4>
+                <p>In a Customer form (single record view), you embed a Datasheet subform at the bottom showing all
+                    Orders for that customer. When you navigate to Customer "Andi", the subform automatically filters to
+                    show only Andi's orders.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

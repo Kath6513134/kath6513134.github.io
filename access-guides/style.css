@@ -457,8 +457,11 @@ code {
 }
 
 .report-group {
-    border-bottom: 1px solid #edebe9;
-    padding-bottom: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.report-group:last-of-type {
+    margin-bottom: 0;
 }
 
 .report-group-header {
@@ -468,11 +471,12 @@ code {
     color: var(--secondary);
     font-size: 1rem;
     border-bottom: 1px solid #c7ddf7;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
 }
 
 .report-group .styled-table {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
+    border-radius: 0;
 }
 
 .report-group-footer {

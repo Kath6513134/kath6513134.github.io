@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Guides - Reports</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="database"></i>
+                <span>Access Guides</span>
+            </a>
+            <div class="nav-links">
+                <a href="tables.html" class="nav-link">
+                    <i data-lucide="table"></i>
+                    <span>Tables</span>
+                </a>
+                <a href="relationships.html" class="nav-link">
+                    <i data-lucide="git-merge"></i>
+                    <span>Relationships</span>
+                </a>
+                <a href="forms.html" class="nav-link">
+                    <i data-lucide="file-text"></i>
+                    <span>Forms</span>
+                </a>
+                <a href="queries.html" class="nav-link">
+                    <i data-lucide="search"></i>
+                    <span>Queries</span>
+                </a>
+                <a href="reports.html" class="nav-link active">
+                    <i data-lucide="bar-chart-3"></i>
+                    <span>Reports</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container page">
+        <header class="page-header">
+            <h1><i data-lucide="bar-chart-3" style="margin-right: 0.5rem; vertical-align: middle;"></i> Reports</h1>
+            <p class="page-intro">
+                Reports are designed for <strong>printing and presenting</strong> data. While forms are for on-screen
+                interaction, reports format data for paper or PDF output with grouping, sorting, totals, and
+                professional layouts.
+            </p>
+        </header>
+
+        <!-- Creating Reports -->
+        <section class="content-section">
+            <h2>Creating Reports</h2>
+            <div class="info-grid" style="margin-top: 1rem;">
+                <div class="card">
+                    <i data-lucide="bar-chart-3"
+                        style="color: var(--primary); width: 32px; height: 32px; margin-bottom: 0.5rem;"></i>
+                    <h4>Report (Auto)</h4>
+                    <p>Instantly creates a report based on the selected table or query. Quick and automatic.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="wand-2"
+                        style="color: var(--primary); width: 32px; height: 32px; margin-bottom: 0.5rem;"></i>
+                    <h4>Report Wizard</h4>
+                    <p>Step-by-step guide: choose fields, grouping levels, sort order, and layout style.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="pen-tool"
+                        style="color: var(--primary); width: 32px; height: 32px; margin-bottom: 0.5rem;"></i>
+                    <h4>Report Design</h4>
+                    <p>Full manual control. Build from scratch with headers, footers, calculated fields, and custom
+                        formatting.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="layout-grid"
+                        style="color: var(--primary); width: 32px; height: 32px; margin-bottom: 0.5rem;"></i>
+                    <h4>Blank Report</h4>
+                    <p>Starts with an empty canvas in Layout View. Drag fields from the Field List to build your report.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Wizard Example -->
+        <section class="content-section">
+            <h2><i data-lucide="wand-2" style="margin-right: 0.5rem; vertical-align: middle;"></i> Report Wizard Example
+            </h2>
+            <p>Creating a "Student Report Grouped by Major":</p>
+            <ol class="styled-list numbered" style="margin-top: 1rem;">
+                <li>Select fields: <code>FirstName</code>, <code>LastName</code>, <code>Major</code>, <code>GPA</code>
+                    from the Students table</li>
+                <li>Add grouping by: <code>Major</code></li>
+                <li>Sort by: <code>GPA</code> (Descending) — highest GPA first within each major</li>
+                <li>Choose layout: Stepped, Landscape orientation</li>
+                <li>Name: "Student Report by Major"</li>
+            </ol>
+
+            <h4 style="margin-top: 1.5rem;">Expected Output:</h4>
+            <div class="report-preview" style="margin-top: 0.75rem;">
+                <div class="report-header-section">
+                    <h3 style="text-align: center; margin: 0;">Student Report by Major</h3>
+                    <p style="text-align: center; color: rgba(255, 255, 255, 0.85); font-size: 0.85rem;">Printed: 19 Feb
+                        2026</p>
+                </div>
+                <div class="report-group">
+                    <div class="report-group-header">Major: Computer Science</div>
+                    <div class="table-wrapper">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>GPA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Andi</td>
+                                    <td>Pratama</td>
+                                    <td>3.85</td>
+                                </tr>
+                                <tr>
+                                    <td>Budi</td>
+                                    <td>Santoso</td>
+                                    <td>3.50</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="report-group-footer">Average GPA: 3.68 | Count: 2 students</div>
+                </div>
+                <div class="report-group">
+                    <div class="report-group-header">Major: Data Science</div>
+                    <div class="table-wrapper">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>GPA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dewi</td>
+                                    <td>Lestari</td>
+                                    <td>3.91</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="report-group-footer">Average GPA: 3.91 | Count: 1 student</div>
+                </div>
+                <div class="report-group">
+                    <div class="report-group-header">Major: Information Systems</div>
+                    <div class="table-wrapper">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>GPA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Siti</td>
+                                    <td>Nurhaliza</td>
+                                    <td>3.72</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="report-group-footer">Average GPA: 3.72 | Count: 1 student</div>
+                </div>
+                <div class="report-grand-footer">Grand Total: 4 students | Overall Average GPA: 3.75</div>
+            </div>
+        </section>
+
+        <!-- Report Sections -->
+        <section class="content-section">
+            <h2>Report Sections</h2>
+            <div class="data-type-list" style="margin-top: 1rem;">
+                <div class="data-type-item"><strong>Report Header</strong><span>Appears once at the very top. Used for
+                        titles, logos, or a cover page.</span></div>
+                <div class="data-type-item"><strong>Page Header</strong><span>Appears at the top of every page. Commonly
+                        used for column headings.</span></div>
+                <div class="data-type-item"><strong>Group Header</strong><span>Appears at the start of each group. Shows
+                        the group name (e.g., Major).</span></div>
+                <div class="data-type-item"><strong>Detail</strong><span>The main section — repeats once for each
+                        record.</span></div>
+                <div class="data-type-item"><strong>Group Footer</strong><span>End of each group. Used for subtotals and
+                        group summaries.</span></div>
+                <div class="data-type-item"><strong>Page Footer</strong><span>Bottom of every page. Often contains page
+                        numbers and dates.</span></div>
+                <div class="data-type-item"><strong>Report Footer</strong><span>Once at the very end. Used for grand
+                        totals and final summaries.</span></div>
+            </div>
+        </section>
+
+        <!-- Views -->
+        <section class="content-section">
+            <h2><i data-lucide="eye" style="margin-right: 0.5rem; vertical-align: middle;"></i> Report Views</h2>
+            <div class="info-grid" style="margin-top: 1rem;">
+                <div class="card">
+                    <h4>Report View</h4>
+                    <p>On-screen preview. Can filter and search data.</p>
+                </div>
+                <div class="card">
+                    <h4>Print Preview</h4>
+                    <p>Shows exactly how the report will look when printed.</p>
+                </div>
+                <div class="card">
+                    <h4>Layout View</h4>
+                    <p>Edit the design while seeing live data.</p>
+                </div>
+                <div class="card">
+                    <h4>Design View</h4>
+                    <p>Full structural control with sections and properties.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section class="content-section">
+            <h2><i data-lucide="printer" style="margin-right: 0.5rem; vertical-align: middle;"></i> Key Features</h2>
+            <ul class="styled-list">
+                <li><strong>Grouping & Sorting:</strong> Group records by a field (e.g., Major) and sort within each
+                    group.</li>
+                <li><strong>Calculated Controls:</strong> Use expressions like <code>=Sum([Amount])</code> or
+                    <code>=Count(*)</code> for totals.</li>
+                <li><strong>Page Numbers:</strong> Use <code>=Page</code> and <code>=Pages</code> to show "Page X of Y".
+                </li>
+                <li><strong>Current Date:</strong> Use <code>=Now()</code> or <code>=Date()</code> to print the current
+                    date.</li>
+                <li><strong>Conditional Formatting:</strong> Highlight records based on rules (e.g., red text for GPA
+                    &lt; 3.0).</li>
+                <li><strong>Export:</strong> Reports can be exported to PDF, XPS, Excel, Word, or printed directly.</li>
+            </ul>
+            <div class="card example-card" style="margin-top: 1rem;">
+                <h4>Example: Calculated Control in Report Footer</h4>
+                <p>In the Group Footer for "Major", add a text box with:</p>
+                <code class="code-block">=Avg([GPA])</code>
+                <p style="margin-top: 0.5rem;">This displays the average GPA for each major group. In the Report Footer,
+                    add:</p>
+                <code
+                    class="code-block">=Count(*) & " students total | Grand Average: " & Format(Avg([GPA]),"0.00")</code>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
